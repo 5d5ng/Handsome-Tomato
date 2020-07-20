@@ -1,8 +1,8 @@
 body{
   text-align: center;
 }
-.camera-icon{
-  width:20%;
-  margin-left: 40%;
 
+footer{
+  font-size: 5px;
+  background-color: aqua;
 }

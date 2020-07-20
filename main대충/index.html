@@ -4,46 +4,70 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style_index.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+  
+  <script src="https://kit.fontawesome.com/c5a11c1975.js" crossorigin="anonymous"></script>
+  
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+   rel="stylesheet">
+   <style>
+     .menu{
+        display: inline;
+     }
+     
+     ul{
+       display: flexbox;
+       list-style-type: none;
+     }
+   </style>
+
 </head>
 <body>
 
-  <h1 class="title">헬창 토마토</h1>
 
-  <div class="holder">
-    <div class="button round-button no-arrow-movement relative">
-      <div class="icon" style="cursor:pointer" onclick="window.location.href='index2.html';"> <!-- 다음 페이지 링크 -->
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 129 129" enable-background="new 0 0 129 129" width="120px" height="120px">
-          <image xlink:href="icon.png" x="0" y="0" height="120px" width="130px"/>
-        </svg>
-      </div>
-    </div>
+
+  <div class="title"><h1>Handsome Tomato</h1></div>
+ 
+  <div class="menu">
+    <ul>
+      
+    <li class="tree">
+
+      <input type="image" width="10%" id="image" alt="Login" src="img/tree.png" onclick="MoveToSearch()">
+
+    </li>
+    <li class="flower">
+      <input type="image" width="10%" id="image" alt="Login" src="img/flower.png">
+    </li>
+    <li class="mushroom">
+      <input type="image" width="10%" id="image" alt="Login" src="img/mushroom.png">
+    </li>
+    <li class="fruits">
+      <input type="image" width="10%" id="image" alt="Login" src="img/fruits.png">
+
+    </li>
+    <li class="greens">
+      <input type="image" width="10%" id="image" alt="Login" src="img/plant.png">
+
+    </li>
+  </ul>
   </div>
 
-  <div class="search_name">
-    이름검색
-  </div>
+  
+  
+  
 
-  <div class="holder">
-
-
-    <div class="button round-button no-arrow-movement relative">
-
-      <div class="icon"  style="cursor:pointer" onclick="window.location.href='index3.html';"> <!-- 다음 페이지 링크 -->
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 129 129" enable-background="new 0 0 129 129" width="120px" height="120px">
-          <image xlink:href="-.png" x="0" y="0" height="120px" width="130px"/>
-        </svg>
-      </div>
     
-    </div>
     
-  </div>
 
-  <div class="search_pic">
-    사진검색
-  </div>
+  <!-- <i class="fas fa-flower-tulip"></i> -->
+  <footer>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></footer>
+  <script>
+    function MoveToSearch(){
+      location.href="tree.html";
+    }
+    
+  </script>
 </body>
 </html>
-
-<!-- 아이콘 제작자 <a href="https://www.flaticon.com/kr/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/kr/" title="Flaticon"> www.flaticon.com</a>-->
-<!-- <div>아이콘 제작자 <a href="https://www.flaticon.com/kr/authors/surang" title="surang">surang</a> from <a href="https://www.flaticon.com/kr/" title="Flaticon">www.flaticon.com</a></div>-->
