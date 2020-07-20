@@ -9,18 +9,15 @@
     <style class="INLINE_PEN_STYLESHEET_ID">
         img{
       display: none;
-    }
-      </style>    
+     }
+    </style>
     </head>
     <body>
     <div class="container-fluid">
-    <h3>풀 이미지를 선택해주세요
+    <h3>버섯 이미지를 선택해주세요
       <button class="salvar btn btn-info glyphicon glyphicon-scissors"></button>
     </h3>
-    <h6>※ 풀이 잘 인식되도록 사진을 편집해주세요</h6>
-    <div>
-      <img src="images/flower.png" width="100" height="200"/>
-    </div>
+    <h6>※ 버섯이 잘 인식되도록 사진을 편집해주세요</h6>
     <div class="img-container"><img /></div>
     <input class="btn btn-default" type="file" onchange="previewFile()" />
     </div>
@@ -51,7 +48,7 @@
       }
     }
     $('.salvar').click(function () {
-        var img = recorte.cropper('getCroppedCanvas').toDataURL();
+      var img = recorte.cropper('getCroppedCanvas').toDataURL();
       var iframe = '<iframe src="' + img + '" frameborder="0" style="border:0; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%;" allowfullscreen></iframe>'
       var x = window.open();
       x.document.open();
