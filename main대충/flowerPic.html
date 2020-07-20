@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropper/2.3.0/cropper.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.6/cerulean/bootstrap.min.css">-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.6/cerulean/bootstrap.min.css">
     <style class="INLINE_PEN_STYLESHEET_ID">
         img{
       display: none;
-    }
-      </style>    
+     }
+    </style>
     </head>
     <body>
     <div class="container-fluid">
-    <h3>이미지를 선택해주세요
-    <button class="salvar btn btn-info glyphicon glyphicon-scissors"></button>
+    <h3>꽃 이미지를 선택해주세요
+      <button class="salvar btn btn-info glyphicon glyphicon-scissors"></button>
     </h3>
-    <h6>※ 운동기구가 잘 인식되도록 사진을 편집해주세요</h6>
+    <h6>※ 꽃이 잘 인식되도록 사진을 편집해주세요</h6>
     <div class="img-container"><img /></div>
     <input class="btn btn-default" type="file" onchange="previewFile()" />
     </div>
@@ -47,12 +47,17 @@
         recorte.cropper('replace', '');
       }
     }
-    var a=null;
     $('.salvar').click(function () {
-      //recorte.cropper.getCroppedCanvas.toDataURL()
-      a = recorte.cropper.getImageData();
+      var img = recorte.cropper('getCroppedCanvas').toDataURL();
+      var iframe = '<iframe src="' + img + '" frameborder="0" style="border:0; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%;" allowfullscreen></iframe>'
+      var x = window.open();
+      x.document.open();
+      x.document.write(iframe);
+      x.document.close();
     });
         //# sourceURL=pen.js
       </script>
     </body>
     </html>
+
+    <!-- <div>아이콘 제작자 <a href="https://www.flaticon.com/kr/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/kr/" title="Flaticon">www.flaticon.com</a></div>-->
