@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" class=''>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropper/2.3.0/cropper.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.6/cerulean/bootstrap.min.css">
+    <style class="INLINE_PEN_STYLESHEET_ID">
+        img{
+      display: none;
+     }
+    </style>
+    </head>
+    <body>
+    <div class="container-fluid">
+    <h3>과일 이미지를 선택해주세요
+      <button class="salvar btn btn-info glyphicon glyphicon-scissors"></button>
+    </h3>
+    <h6>※ 과일이 잘 인식되도록 사진을 편집해주세요</h6>
+    <div class="img-container"><img /></div>
+    <input class="btn btn-default" type="file" onchange="previewFile()" />
+    </div>
+    <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropper/2.3.0/cropper.js"></script>
+    <script id="INLINE_PEN_JS_ID">
+        var recorte = $('.img-container > img');
+    recorte.cropper({
+      movable: false,
+      zoomable: false,
+      rotatable: false,
+      scalable: false });
+    
+    
+    function previewFile() {
+      var file = document.querySelector('input[type=file]').files[0];
+      var reader = new FileReader();
+    
+      reader.onloadend = function () {
+        $('img').show();
+        recorte.cropper('replace', reader.result);
+      };
+      if (file) {
+        reader.readAsDataURL(file);
+      } else {
+        recorte.cropper('replace', '');
+      }
+    }
+    $('.salvar').click(function () {
+      var img = recorte.cropper('getCroppedCanvas').toDataURL();
+      var iframe = '<iframe src="' + img + '" frameborder="0" style="border:0; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%;" allowfullscreen></iframe>'
+      var x = window.open();
+      x.document.open();
+      x.document.write(iframe);
+      x.document.close();
+    });
+        //# sourceURL=pen.js
+      </script>
+    </body>
+    </html>
