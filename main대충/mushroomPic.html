@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="css/style_discrimination.css" />
+    </head>
+    <body>    
+        <section>
+            <div class="preview" id = "triggerUpload" class = "upload"></div>
+			<button type="button" onclick="predict()" class="btn">Go</button>
+            <input type="file" id="filePicker" />
+            <div class="fileName"></div>
+        </section>
+
+        <!-- 티처블 머신 부분 -->
+
+        <script>
+            var triggerUpload = document.getElementById('triggerUpload'),
+                upInput = document.getElementById('filePicker'),
+                preview = document.querySelector('.preview');
+
+            //force triggering the file upload here...
+            triggerUpload.onclick = function () {
+                upInput.click();
+            };
+
+            upInput.onchange = function (e) {
+                var uploaded = this.value,
+                    ext = uploaded.substring(uploaded.lastIndexOf('.') + 1),
+                    ext = ext.toLowerCase(),
+                    fileName = uploaded.substring(uploaded.lastIndexOf('\\') + 1),
+                    accepted = ['jpg', 'png', 'gif', 'jpeg'];
+
+                /*
+    ::Add in blank img tag and spinner
+    ::Use FileReader to read the img data
+    ::Set the image source to the FileReader data
+  */
+                function showPreview() {
+                    preview.innerHTML = "<div class='loadingLogo'></div>";
+                    preview.innerHTML += '<img id="flower-image" />';
+                    var reader = new FileReader();
+                    reader.onload = function () {
+                        var img = document.getElementById('flower-image');
+                        img.src = reader.result;
+                    };
+                    reader.readAsDataURL(e.target.files[0]);
+                    preview.removeChild(document.querySelector('.loadingLogo'));
+                    document.querySelector('.fileName').innerHTML = fileName + '<b> Uploaded!</b>';
+                }
+
+                //only do if supported image file
+                if (new RegExp(accepted.join('|')).test(ext)) {
+                    showPreview();
+                } else {
+                    preview.innerHTML = '';
+                    document.querySelector('.fileName').innerHTML =
+                        'Hey! Upload an image file, not a <b>.' + ext + '</b> file!';
+                }
+            };
+        </script>
+    </body>
+
+    <!-- Copyright (c) 2020 by javabella (https://codepen.io/javabella/pen/RPPOrm)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ -->
+</html>
