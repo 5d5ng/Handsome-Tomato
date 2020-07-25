@@ -2,6 +2,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="css/style_discrimination.css" />
+        <link rel="stylesheet" href="css/style_loading.css"/>
     </head>
     <body>    
         <section>
@@ -22,7 +23,7 @@
             // the link to your model provided by Teachable Machine export panel
             const URL = 'https://teachablemachine.withgoogle.com/models/BhfX_uwmj/';
 
-            let model, webcam, labelContainer, maxPredictions;
+            let model, labelContainer, maxPredictions;
 
             // Load the image model and setup the webcam
             window.onload = async function init() {
@@ -57,6 +58,10 @@
 
             function MoveToSearch(name){
                 window.location.href = "resultPage.html?index=" + name;
+                window.onbeforeunload = function () { $('#container').show(); }  //현재 페이지에서 다른 페이지로 넘어갈 때 표시해주는 기능
+                $(window).load(function () {          //페이지가 로드 되면 로딩 화면을 없애주는 것
+                    $('#container').hide();
+                });
             }
         </script>
         <script>
@@ -104,25 +109,13 @@
                 }
             };
         </script>
-            <div id="container">
-            <div class="divider" aria-hidden="true"></div>
-            <p class="loading-text" aria-label="Loading">
-                <span class="letter" aria-hidden="true">L</span>
-                <span class="letter" aria-hidden="true">o</span>
-                <span class="letter" aria-hidden="true">a</span>
-                <span class="letter" aria-hidden="true">d</span>
-                <span class="letter" aria-hidden="true">i</span>
-                <span class="letter" aria-hidden="true">n</span>
-                <span class="letter" aria-hidden="true">g</span>
-                <p class="letter" aria-hidden="true">분석중입니다 ···</p>
-            </p>
         
-            <script type="text/javascript">
-                window.onbeforeunload = function () { $('#loading').show(); }  //현재 페이지에서 다른 페이지로 넘어갈 때 표시해주는 기능
+            <!--<script type="text/javascript">
+                window.onbeforeunload = function () { $('#container').show(); }  //현재 페이지에서 다른 페이지로 넘어갈 때 표시해주는 기능
                 $(window).load(function () {          //페이지가 로드 되면 로딩 화면을 없애주는 것
-                    $('#loading').hide();
+                    $('#container').hide();
                 });
-            </script>
+            </script>-->
     </body>
 
     <!-- Copyright (c) 2020 by javabella (https://codepen.io/javabella/pen/RPPOrm)
