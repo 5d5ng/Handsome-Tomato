@@ -104,6 +104,25 @@
                 }
             };
         </script>
+            <div id="container">
+            <div class="divider" aria-hidden="true"></div>
+            <p class="loading-text" aria-label="Loading">
+                <span class="letter" aria-hidden="true">L</span>
+                <span class="letter" aria-hidden="true">o</span>
+                <span class="letter" aria-hidden="true">a</span>
+                <span class="letter" aria-hidden="true">d</span>
+                <span class="letter" aria-hidden="true">i</span>
+                <span class="letter" aria-hidden="true">n</span>
+                <span class="letter" aria-hidden="true">g</span>
+                <p class="letter" aria-hidden="true">분석중입니다 ···</p>
+            </p>
+        
+            <script type="text/javascript">
+                window.onbeforeunload = function () { $('#loading').show(); }  //현재 페이지에서 다른 페이지로 넘어갈 때 표시해주는 기능
+                $(window).load(function () {          //페이지가 로드 되면 로딩 화면을 없애주는 것
+                    $('#loading').hide();
+                });
+            </script>
     </body>
 
     <!-- Copyright (c) 2020 by javabella (https://codepen.io/javabella/pen/RPPOrm)
