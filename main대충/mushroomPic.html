@@ -12,9 +12,6 @@
         </section>
 
         <!-- 티처블 머신 부분 -->
-        <div>Teachable Machine Image Model</div>
-<button type="button" onclick="init()">Start</button>
-<div id="webcam-container"></div>
 <div id="label-container"></div>
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
@@ -25,10 +22,10 @@
     // the link to your model provided by Teachable Machine export panel
     const URL = "./my_model/";
 
-    let model, webcam, labelContainer, maxPredictions;
+    let model, labelContainer, maxPredictions;
 
     // Load the image model and setup the webcam
-    async function init() {
+    window.onload = async function init() {
         const modelURL = URL + "model.json";
         const metadataURL = URL + "metadata.json";
 
@@ -39,40 +36,27 @@
         model = await tmImage.load(modelURL, metadataURL);
         maxPredictions = model.getTotalClasses();
 
-        // Convenience function to setup a webcam
-        const flip = true; // whether to flip the webcam
-        webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
-        await webcam.setup(); // request access to the webcam
-        await webcam.play();
-        window.requestAnimationFrame(loop);
-
-        // append elements to the DOM
-        document.getElementById("webcam-container").appendChild(webcam.canvas);
         labelContainer = document.getElementById("label-container");
         for (let i = 0; i < maxPredictions; i++) { // and class labels
             labelContainer.appendChild(document.createElement("div"));
         }
     }
 
-    async function loop() {
-        webcam.update(); // update the webcam frame
-        await predict();
-        window.requestAnimationFrame(loop);
-    }
-
     // run the webcam image through the image model
     async function predict() {
-        // predict can take in an image, video or canvas html element
-        const prediction = await model.predict(webcam.canvas);
-        for (let i = 0; i < maxPredictions; i++) {
-            const classPrediction =
-                prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-            labelContainer.childNodes[i].innerHTML = classPrediction;
-        }
-    }
-</script>
+                // predict can take in an image, video or canvas html element
+                var image=document.getElementById('flower-image')
+                const prediction = await model.predict(image, false);
+                prediction.sort(function(a, b){ // 내림차순으로 정렬해서 상위애들부터 가져옴
+                    return a.probability > b.probability ? -1:a.probability<b.probability ? 1:0;
+                })
+                MoveToSearch(prediction[0].className);   // 다음 페이지로 넘어가게 하기
+            }
 
-
+            function MoveToSearch(name){
+                window.location.href = "resultPage.html?index=" + name;
+            }
+        </script>
         <script>
             var triggerUpload = document.getElementById('triggerUpload'),
                 upInput = document.getElementById('filePicker'),

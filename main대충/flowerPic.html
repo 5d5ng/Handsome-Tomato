@@ -58,10 +58,6 @@
 
             function MoveToSearch(name){
                 window.location.href = "resultPage.html?index=" + name;
-                window.onbeforeunload = function () { $('#container').show(); }  //현재 페이지에서 다른 페이지로 넘어갈 때 표시해주는 기능
-                $(window).load(function () {          //페이지가 로드 되면 로딩 화면을 없애주는 것
-                    $('#container').hide();
-                });
             }
         </script>
         <script>
@@ -109,13 +105,6 @@
                 }
             };
         </script>
-        
-            <!--<script type="text/javascript">
-                window.onbeforeunload = function () { $('#container').show(); }  //현재 페이지에서 다른 페이지로 넘어갈 때 표시해주는 기능
-                $(window).load(function () {          //페이지가 로드 되면 로딩 화면을 없애주는 것
-                    $('#container').hide();
-                });
-            </script>-->
     </body>
 
     <!-- Copyright (c) 2020 by javabella (https://codepen.io/javabella/pen/RPPOrm)
