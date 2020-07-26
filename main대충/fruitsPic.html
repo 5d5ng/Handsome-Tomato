@@ -44,14 +44,20 @@
 
     // run the webcam image through the image model
     async function predict() {
-                // predict can take in an image, video or canvas html element
-                var image=document.getElementById('flower-image')
+                $('#triggerUpload').hide();
+                $('.btn').hide();
+                $('#filePicker').hide();
+                $('.fileName').hide();
+                $('#back').hide();
+                $('#container').show("fast", async () => {
+                var image = document.getElementById('flower-image');
                 const prediction = await model.predict(image, false);
-                prediction.sort(function(a, b){ // 내림차순으로 정렬해서 상위애들부터 가져옴
+                prediction.sort(function(a, b){ 
                     return a.probability > b.probability ? -1:a.probability<b.probability ? 1:0;
                 })
-                MoveToSearch(prediction[0].className);   // 다음 페이지로 넘어가게 하기
-            }
+                MoveToSearch(prediction[0].className);  
+                });
+            }       
 
             function MoveToSearch(name){
                 window.location.href = "resultPage.html?index=" + name;

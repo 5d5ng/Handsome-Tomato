@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="css/style_loading.css"/>
     </head>
     <body>    
-        <section>
+        <section id = "back">
             <div class="preview" id = "triggerUpload" class = "upload"></div>
 			<button type="button" onclick="predict()" class="btn">Go</button>
             <input type="file" id="filePicker" />
@@ -46,15 +46,20 @@
             }
             // run the webcam image through the image model
             async function predict() {
-    $('#container').show("fast", async () => {
-        var image = document.getElementById('flower-image')
-        const prediction = await model.predict(image, false);
-        prediction.sort(function(a, b){ 
-            return a.probability > b.probability ? -1:a.probability<b.probability ? 1:0;
-        })
-        MoveToSearch(prediction[0].className);  
-    });
-}
+                $('#triggerUpload').hide();
+                $('.btn').hide();
+                $('#filePicker').hide();
+                $('.fileName').hide();
+                $('#back').hide();
+                $('#container').show("fast", async () => {
+                var image = document.getElementById('flower-image');
+                const prediction = await model.predict(image, false);
+                prediction.sort(function(a, b){ 
+                    return a.probability > b.probability ? -1:a.probability<b.probability ? 1:0;
+                })
+                MoveToSearch(prediction[0].className);  
+                });
+            }       
 
             function MoveToSearch(name){
                 window.location.href = "resultPage.html?index=" + name;
