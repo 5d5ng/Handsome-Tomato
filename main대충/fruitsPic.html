@@ -2,9 +2,10 @@
 <html>
     <head>
         <link rel="stylesheet" href="css/style_discrimination.css" />
+        <link rel="stylesheet" href="css/style_loading.css"/>
     </head>
     <body>    
-        <section>
+        <section id = "back">
             <div class="preview" id = "triggerUpload" class = "upload"></div>
 			<button type="button" onclick="predict()" class="btn">Go</button>
             <input type="file" id="filePicker" />
@@ -108,6 +109,25 @@
                 }
             };
         </script>
+           <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+           <div id="container">
+           <div class="divider" aria-hidden="true"></div>
+           <p class="loading-text" aria-label="Loading">
+             <span class="letter" aria-hidden="true">L</span>
+             <span class="letter" aria-hidden="true">o</span>
+             <span class="letter" aria-hidden="true">a</span>
+             <span class="letter" aria-hidden="true">d</span>
+             <span class="letter" aria-hidden="true">i</span>
+             <span class="letter" aria-hidden="true">n</span>
+             <span class="letter" aria-hidden="true">g</span>
+             <p class="letter" aria-hidden="true">분석중입니다 ···</p>
+           </p>
+         </div>
+           <script>
+               $(document).ready(function() {
+               $('#container').hide();
+               });
+           </script>
     </body>
 
     <!-- Copyright (c) 2020 by javabella (https://codepen.io/javabella/pen/RPPOrm)
