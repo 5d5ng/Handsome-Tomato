@@ -2,9 +2,10 @@
 <html>
     <head>
         <link rel="stylesheet" href="css/style_discrimination.css" />
+        <link rel="stylesheet" href="css/style_loading.css"/>
     </head>
     <body>    
-        <section>
+        <section id = "back">
             <div class="preview" id = "triggerUpload" class = "upload"></div>
 			<button type="button" onclick="predict()" class="btn">Go</button>
             <input type="file" id="filePicker" />
@@ -12,9 +13,6 @@
         </section>
 
         <!-- 티처블 머신 부분 -->
-        <div>Teachable Machine Image Model</div>
-        <button type="button" onclick="init()">Start</button>
-        <div id="webcam-container"></div>
         <div id="label-container"></div>
         <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
@@ -25,10 +23,10 @@
             // the link to your model provided by Teachable Machine export panel
             const URL = "https://teachablemachine.withgoogle.com/models/WcMqNVdhk/";
         
-            let model, webcam, labelContainer, maxPredictions;
+            let model, labelContainer, maxPredictions;
         
             // Load the image model and setup the webcam
-            async function init() {
+            window.onload = async function init() {
                 const modelURL = URL + "model.json";
                 const metadataURL = URL + "metadata.json";
         
@@ -39,41 +37,33 @@
                 model = await tmImage.load(modelURL, metadataURL);
                 maxPredictions = model.getTotalClasses();
         
-                // Convenience function to setup a webcam
-                const flip = true; // whether to flip the webcam
-                webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
-                await webcam.setup(); // request access to the webcam
-                await webcam.play();
-                window.requestAnimationFrame(loop);
-        
-                // append elements to the DOM
-                document.getElementById("webcam-container").appendChild(webcam.canvas);
                 labelContainer = document.getElementById("label-container");
                 for (let i = 0; i < maxPredictions; i++) { // and class labels
                     labelContainer.appendChild(document.createElement("div"));
                 }
             }
         
-            async function loop() {
-                webcam.update(); // update the webcam frame
-                await predict();
-                window.requestAnimationFrame(loop);
-            }
-        
             // run the webcam image through the image model
             async function predict() {
-                // predict can take in an image, video or canvas html element
-                const prediction = await model.predict(webcam.canvas);
-                for (let i = 0; i < maxPredictions; i++) {
-                    const classPrediction =
-                        prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-                    labelContainer.childNodes[i].innerHTML = classPrediction;
-                }
+                $('#triggerUpload').hide();
+                $('.btn').hide();
+                $('#filePicker').hide();
+                $('.fileName').hide();
+                $('#back').hide();
+                $('#container').show("fast", async () => {
+                var image = document.getElementById('flower-image');
+                const prediction = await model.predict(image, false);
+                prediction.sort(function(a, b){ 
+                    return a.probability > b.probability ? -1:a.probability<b.probability ? 1:0;
+                })
+                MoveToSearch(prediction[0].className);  
+                });
+            }       
+
+            function MoveToSearch(name){
+                window.location.href = "resultPage.html?index=" + name;
             }
         </script>
-        
-
-
         <script>
             var triggerUpload = document.getElementById('triggerUpload'),
                 upInput = document.getElementById('filePicker'),
@@ -119,6 +109,23 @@
                 }
             };
         </script>
+           <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+           <div id="container">
+           <div class="divider" aria-hidden="true"></div>
+           <p class="loading-text" aria-label="Loading">
+             <span class="letter" aria-hidden="true">L</span>
+             <span class="letter" aria-hidden="true">o</span>
+             <span class="letter" aria-hidden="true">a</span>
+             <span class="letter" aria-hidden="true">d</span>
+             <span class="letter" aria-hidden="true">i</span>
+             <span class="letter" aria-hidden="true">n</span>
+             <span class="letter" aria-hidden="true">g</span>
+             <p class="letter hi" aria-hidden="true">분석중입니다 ···</p>
+           </p>
+         </div>
+           <script>
+               $('#container').hide();
+           </script>
     </body>
 
     <!-- Copyright (c) 2020 by javabella (https://codepen.io/javabella/pen/RPPOrm)

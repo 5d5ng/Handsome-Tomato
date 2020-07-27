@@ -20,13 +20,21 @@
        display: flexbox;
        list-style-type: none;
      }
+     .loading{
+    width:100%;
+    height:100%;
+    position:fixed;
+    left:0px;
+    top:0px;
+    background:#fff;
+    z-index:1000; /* 이 값으로 레이어의 위치를 조정합니다. */
+}
    </style>
 
 </head>
 <body>
 
-
-
+  <div class="loading"><h1>loading</h1>loading</div>
   <div class="title"><h1>Handsome Tomato</h1></div>
  
   <div class="menu">
@@ -39,7 +47,6 @@
     </li>
     <li class="fruits">
       <input type="image" width="10%" id="image" alt="Login" src="img/fruits.png" onclick="MoveToSearch('fruitsPic')">
-
     </li>
     <li class="greens">
       <input type="image" width="10%" id="image" alt="Login" src="img/plant.png" onclick="MoveToSearch('plantPic')">
@@ -56,5 +63,11 @@
     }
     
   </script>
+     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+  <script>
+    $(window).on('load', function(){
+        $(".loading").hide();
+    });
+</script>
 </body>
 </html>

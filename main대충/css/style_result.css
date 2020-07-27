@@ -1,0 +1,28 @@
+section{
+    width: 95%;
+    max-width: 750px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 3.5em .75em;
+    border: 1px solid #e8e8e8;
+    border-radius: 6px;
+    background: #fff;
+  }
+  .btn{
+    position : relative;
+  Top : 15px;
+    text-align: center;
+    padding: .5em .75em;
+    background: pink;
+    background: linear-gradient(to right, pink, lightpink);
+    border: none;
+    font-weight: 300;
+    font-size: 1.25EM;
+    color: #fff;
+    border-radius: 4px;
+    transition: all 500ms;
+  }
+  

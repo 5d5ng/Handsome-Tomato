@@ -38,6 +38,10 @@ input[type=file]{
   visibility: hidden;
 }
 
+.hi{
+  text-align: center;
+}
+
 .fileName{
   padding-top: 10px;
   font-weight: 300;
