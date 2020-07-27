@@ -53,7 +53,7 @@
                 prediction.sort(function(a, b){ // 내림차순으로 정렬해서 상위애들부터 가져옴
                     return a.probability > b.probability ? -1:a.probability<b.probability ? 1:0;
                 })
-                MoveToSearch(prediction[0].className,prediction[1].className);   // 다음 페이지로 넘어가게 하기
+                MoveToSearch(prediction[0].className,prediction[1].className);   //다음 페이지로 넘어가게 하기
             }
 
             function MoveToSearch(name, name2){
