@@ -62,6 +62,10 @@ input[type=file]{
     width: 250px; height: 250px;
      object-fit: contain;
   }
+
+  #img_camera{
+    width: 100px; height: 230px;
+  }
   
   .loadingLogo{
     position: absolute;
