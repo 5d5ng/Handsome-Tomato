@@ -31,7 +31,7 @@
             <div id="rname">
 			답</div>
             <div>설명</div>
-            <button type="button" onclick="MoveToResult2(rname2)" class="btn">이 꽃이 아닌가요?</button>
+            <button type="button" onclick="MoveToResult2()" class="btn">이 꽃이 아닌가요?</button>
             <button type="button" onclick="MoveToHome()" class="btn">돌아가기</button>
         </section>
 
@@ -47,13 +47,11 @@
 				document.getElementById("rname").innerText = rname1; //id=rname인 부분을 rname1값으로 바꾸기
 				
             });
-        </script>
-        <script>
-            function MoveToResult2(name) {
-                window.location.href = 'resultPage2.html?index=' + name;
+
+            function MoveToResult2() {
+                window.location.href = 'resultPage2.html?=index='+rname2;
             }
-        </script>
-        <script>
+
             function MoveToHome() {
                 window.location.href = 'index.html';
             }
