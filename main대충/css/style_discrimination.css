@@ -65,6 +65,7 @@ input[type=file]{
 
   #img_camera{
     width: 100px; height: 230px;
+    opacity: 30%;
   }
   
   .loadingLogo{
