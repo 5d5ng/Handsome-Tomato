@@ -18,13 +18,14 @@
         <script type="text/javascript">
             var rname2;
             document.addEventListener('DOMContentLoaded', function () {
+                // 5까지 나누기
                 var temp = location.href.split('?'); //주소?로 나누기
                 var data = temp[1].split('&'); //?뒷부분 &로 나누기
                 var result1 = data[0].split('='); //&로 나눠진앞부분 =으로 나누기
                 var rname1 = result1[1]; //=으로 나눈부분 중 뒷부분(첫번째 정답)
                 var result2 = data[1].split('='); //&로 나눠진뒷부분 =으로 나누기
                 rname2 = result2[1]; //=으로 나눈부분 중 뒷부분(두번째 정답)
-                document.getElementById("rname").innerText = rname1; //id=rname인 부분을 rname1값으로 바꾸기
+                document.getElementById("rname").innerText = decodeURIComponent(rname1); //id=rname인 부분을 rname1값으로 바꾸기
                 
             });
 
