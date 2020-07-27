@@ -57,12 +57,11 @@
                 prediction.sort(function(a, b){ 
                     return a.probability > b.probability ? -1:a.probability<b.probability ? 1:0;
                 })
-                MoveToSearch(prediction[0].className);  
+                MoveToSearch(prediction[0].className, prediction[1].className);  
                 });
             }       
-
-            function MoveToSearch(name){
-                window.location.href = "resultPage.html?index=" + name;
+            function MoveToSearch(name, name2){
+                window.location.href = "resultPage.html?index=" + name+"&index2="+name2; //다음페이지에 정답두개 전송
             }
         </script>
         <script>
