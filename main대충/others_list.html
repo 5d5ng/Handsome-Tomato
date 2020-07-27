@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style_others.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="list-wrapper">
+        <ul class="list">
+    
+        <!--Flexbox list item-->
+        <li class="list-item">
+            <div class="list-item__image">
+                <img alt="Thumbnail" id="img1">
+            </div>
+            <div class="list-item__content">
+                
+                <h4 id="s1">튤립</h4> <!-- val1 받아오면 튤립 지우기 -->
+                <p> 뭐시기이다 </p> <!-- 아마 위키백과 설명 -->
+            </div>
+        </li>
+    
+        <!--Flexbox list item-->
+        <li class="list-item">
+            <div class="list-item__image">
+                <img alt="Thumbnail" id="img2">
+                <!-- 나중에 이미지 해당하는 사진 -->
+            </div>
+            <div class="list-item__content">
+                <h4 id="s2">장미</h4> <!-- val2 받아오면 장미 지우기 -->
+                <p>뭐시기이다</p>
+            </div>
+        </li>
+    
+        <!--Flexbox list item-->
+        <li class="list-item">
+            <div class="list-item__image">
+                <img alt="Thumbnail" id="img3">
+            </div>
+            <div class="list-item__content">
+                <h4 id="s3">해바라기</h4> <!-- val3 받아오면 해바라기 지우기 -->
+                <p>뭐시기이다</p>
+            </div>
+        </li>
+    
+    </ul>
+    </div>
+    <script type="text/javascript">
+        document.getElementById("img1").src = 'images/flower.png'; // flower대신에 val1값 넣기
+        document.getElementById("img2").src = 'images/flower.png'; // flower대신에 val2값 넣기
+        document.getElementById("img3").src = 'images/flower.png'; // flower대신에 val3값 넣기
+        document.addEventListener("DOMContentLoaded", function () {
+            var val1 = location.href.substr(
+                location.href.lastIndexOf('=') + 1
+                // URL 나오면 split으로 3,4,5위 끊어내기 (주소로 계속 넘기기)
+            );
+            //document.getElementById("s1").innerHTML=decodeURI(val1);
+            //document.getElementById("s2").innerHTML=decodeURI(val2);
+            //document.getElementById("s3").innerHTML=decodeURI(val3);
+            // 나중에 주석 해제하고 내용 넣기 
+        });
+    </script>
+</body>
+</html>
