@@ -1,18 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <script type="text/javascript">
-        document.addEventListener("DOMContentLoaded", function () {
-            var val = location.href.substr(
-                location.href.lastIndexOf('=') + 1
-            );
-            document.write(decodeURI(val));
-        });
-    </script>
-</body>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="css/style_result.css" />
+    </head>
+    <body>
+        <section>
+            <div>사진</div>
+            <div id="rname">
+			답</div>
+            <div>설명</div>
+            <button type="button" onclick="MoveToResult2(rname2)" class="btn">이 꽃이 아닌가요?</button>
+            <button type="button" onclick="MoveToHome()" class="btn">돌아가기</button>
+        </section>
+
+        <script type="text/javascript">
+            document.addEventListener('DOMContentLoaded', function () {
+                var temp = location.href.split('?');
+                var data = temp[1].split('&');
+                var result1 = data[0].split('=');
+                var rname1 = result1[1];
+                var result2 = data[1].split('=');
+                var rname2 = result2[1];
+				
+				document.getElementById("rname").innerText = rname1;
+				
+            });
+        </script>
+        <script>
+            function MoveToResult2(name) {
+                window.location.href = 'ResultPage2.html?index=' + name;
+            }
+        </script>
+        <script>
+            function MoveToHome() {
+                window.location.href = 'index.html';
+            }
+        </script>
+    </body>
 </html>
