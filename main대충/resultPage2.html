@@ -6,6 +6,13 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function () {
+            var val = location.href.substr(
+                location.href.lastIndexOf('=') + 1
+            );
+            document.write(decodeURI(val));
+        });
+    </script>
 </body>
-</html>
+</html> 
