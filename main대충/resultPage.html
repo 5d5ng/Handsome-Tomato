@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<<<<<<< HEAD
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -17,46 +16,3 @@
     </script>
 </body>
 </html>  
-=======
-<html lang="ko">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-        <link rel="stylesheet" href="css/style_result.css" />
-    </head>
-    <body>
-        <section>
-            <div>사진</div>
-            <div id="rname">
-			답</div>
-            <div>설명</div>
-            <button type="button" onclick="MoveToResult2()" class="btn">이 꽃이 아닌가요?</button>
-            <button type="button" onclick="MoveToHome()" class="btn">돌아가기</button>
-        </section>
-
-        
-        <script type="text/javascript">
-            var rname2;
-            document.addEventListener('DOMContentLoaded', function () {
-                var temp = location.href.split('?'); //주소?로 나누기
-                var data = temp[1].split('&'); //?뒷부분 &로 나누기
-                var result1 = data[0].split('='); //&로 나눠진앞부분 =으로 나누기
-                var rname1 = result1[1]; //=으로 나눈부분 중 뒷부분(첫번째 정답)
-                var result2 = data[1].split('='); //&로 나눠진뒷부분 =으로 나누기
-                rname2 = result2[1]; //=으로 나눈부분 중 뒷부분(두번째 정답)
-                document.getElementById("rname").innerText = rname1; //id=rname인 부분을 rname1값으로 바꾸기
-                
-            });
-
-            function MoveToResult2() {
-                window.location.href = 'resultPage2.html?index='+rname2;
-            }
-
-            function MoveToHome() {
-                window.location.href = 'index.html';
-            }
-        </script>
-    </body>
-</html>
->>>>>>> be4ad1c5eb3c7581f1d8db23144b750a2626a627
