@@ -68,7 +68,25 @@
             document.getElementById("s1").innerHTML=decodeURI(val1);
             document.getElementById("s2").innerHTML=decodeURI(val2);
             document.getElementById("s3").innerHTML=decodeURI(val3);
-            TitleSet();
+            if(decodeURIComponent(category)=='flowerPic'){
+                window.addEventListener("load", function(){
+                    document.getElementById("title_set").innerHTML='비슷하게 생긴 이런 꽃들도 있어요';
+                })
+            }
+            else if(decodeURIComponent(category)=='fruitsPic'){
+                window.addEventListener("load", function(){
+                    document.getElementById("title_set").innerHTML='비슷하게 생긴 이런 과일들도 있어요';
+                })
+            }
+            else if(decodeURIComponent(category)=='mushroomPic'){
+                window.addEventListener("load", function(){
+                    document.getElementById("title_set").innerHTML='비슷하게 생긴 이런 버섯들도 있어요';
+                })
+            }else{
+                window.addEventListener("load", function(){
+                    document.getElementById("title_set").innerHTML='비슷하게 생긴 이런 풀들도 있어요';
+                })
+            }
         });
 
         function MoveToPic(){
@@ -78,25 +96,7 @@
                 window.location.href = 'index.html';
             }
         function TitleSet(){
-            if(category==='flowerPic'){
-                window.addEventListener("load", function(){
-                    document.getElementById("title_set").innerHTML='비슷하게 생긴 이런 꽃들도 있어요';
-                })
-            }
-            else if(category==='fruitsPic'){
-                window.addEventListener("load", function(){
-                    document.getElementById("title_set").innerHTML='비슷하게 생긴 이런 과일들도 있어요';
-                })
-            }
-            else if(category==='mushroomPic'){
-                window.addEventListener("load", function(){
-                    document.getElementById("title_set").innerHTML='비슷하게 생긴 이런 버섯들도 있어요';
-                })
-            }else{
-                window.addEventListener("load", function(){
-                    document.getElementById("title_set").innerHTML='비슷하게 생긴 이런 풀들도 있어요';
-                })
-            }
+
         }
     </script>
 </body>
