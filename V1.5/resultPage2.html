@@ -4,21 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/style_result.css" />
 </head>
 <body>
-    <button type="button" onclick="MoveToResult2()" class="btn">이 꽃이 아닌가요?</button>
-    
+    <section>
+        <div>사진</div>
+        <div id="rname">답</div>
+        <div>설명</div>
+        <button type="button" onclick="MoveToResult2()" class="btn">이 꽃이 아닌가요?</button>
+        <button type="button" onclick="MoveToHome()" class="btn">돌아가기</button>
+    </section>
+
     <script type="text/javascript">
         var rname3;
         var rname4;
         var rname5;
         var category;
         document.addEventListener("DOMContentLoaded", function () {
-            var temp = location.href.split('?'); // split 계속!
+            var temp = location.href.split('?');
+            var data = temp[1].split('&');
+            var result2 = data[0].split('=');
+            var rname2 = result2[1];
+            var result3 = data[1].split('=');
+            rname3 = result3[1];
+            var result4 = data[2].split('=');
+            rname4 = result4[1];
+            var result5 = data[3].split('=');
+            rname5 = result5[1];
+            var result6 = data[4].split('=');
+            category = result6[1];
+            document.getElementById("rname").innerText = decodeURIComponent(rname2); //id=rname 부분을 rname2값으로 바꾸기
         });
 
         function MoveToResult2() {
-                window.location.href = "others_list.html"+"&index3="+rname3+"&index4="+rname4+"&index5="+rname5+"&category="+category;
+                window.location.href = "others_list.html?&index3="+rname3+"&index4="+rname4+"&index5="+rname5+"&category="+category;
+            }
+
+            function MoveToHome() {
+                window.location.href = 'index.html';
             }
     </script>
 </body>

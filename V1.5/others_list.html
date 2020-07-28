@@ -7,7 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    <!-- 사진 새로 찍기랑 메인으로 가기 버튼 만들어야함-->
     <div class="list-wrapper">
         <ul class="list">
     
@@ -50,22 +49,28 @@
     <button type="button" onclick="MoveToHome()" class="btn">처음으로</button>
     </div>
     <script type="text/javascript">
+        // 나중에 식물 대표 사진들 다 저장했을 때 사진 붙이면 됨
         document.getElementById("img1").src = 'images/flower.png'; // flower대신에 val1값 넣기
         document.getElementById("img2").src = 'images/flower.png'; // flower대신에 val2값 넣기
         document.getElementById("img3").src = 'images/flower.png'; // flower대신에 val3값 넣기
+        var val1, val2, val3, category;
         document.addEventListener("DOMContentLoaded", function () {
-            var val1 = location.href.substr(
-                location.href.lastIndexOf('=') + 1
-                // URL 나오면 split으로 3,4,5위 끊어내기 (주소로 계속 넘기기)
-            );
-            //document.getElementById("s1").innerHTML=decodeURI(val1);
-            //document.getElementById("s2").innerHTML=decodeURI(val2);
-            //document.getElementById("s3").innerHTML=decodeURI(val3);
-            // 나중에 주석 해제하고 내용 넣기 
+            var data = location.href.split('&');
+            var result3 = data[1].split('=');
+            val1 = result3[1];
+            var result4 = data[2].split('=');
+            val2 = result4[1];
+            var result5 = data[3].split('=');
+            val3 = result5[1];
+            var result6 = data[4].split('=');
+            category = result6[1];
+            document.getElementById("s1").innerHTML=decodeURI(val1);
+            document.getElementById("s2").innerHTML=decodeURI(val2);
+            document.getElementById("s3").innerHTML=decodeURI(val3);
         });
 
-        function moveToPic(){
-            location.href = ''
+        function MoveToPic(){
+            window.location.href = category+".html";
         }
         function MoveToHome() {
                 window.location.href = 'index.html';
