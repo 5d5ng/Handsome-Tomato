@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- 사진 새로 찍기랑 메인으로 가기 버튼 만들어야함-->
     <div class="list-wrapper">
         <ul class="list">
     
@@ -44,8 +45,9 @@
                 <p>뭐시기이다</p>
             </div>
         </li>
-    
     </ul>
+    <button type="button" onclick="MoveToPic()" class="btn">사진 다시 찍기</button>
+    <button type="button" onclick="MoveToPic()" class="btn">처음으로</button>
     </div>
     <script type="text/javascript">
         document.getElementById("img1").src = 'images/flower.png'; // flower대신에 val1값 넣기
@@ -61,6 +63,10 @@
             //document.getElementById("s3").innerHTML=decodeURI(val3);
             // 나중에 주석 해제하고 내용 넣기 
         });
+
+        function moveToPic(){
+            location.href = ''
+        }
     </script>
 </body>
 </html>

@@ -4,20 +4,45 @@ body{
 }
 
 .list-wrapper{
-	width: 90%;
+	width: 95%;
   max-width: 600px;
-	margin: 30px auto;
+    margin: 30px auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 3.5em .75em;
+    border: 1px solid #e8e8e8;
+    border-radius: 6px;
 }
 
+.btn{
+    position : relative;
+    Top : 15px;
+    left: 25%;
+    text-align: center;
+    padding: .5em .75em;
+    background: pink;
+    background: linear-gradient(to right, pink, lightpink);
+    border: none;
+    font-weight: 300;
+    font-size: 1.25EM;
+    color: #fff;
+    border-radius: 4px;
+    transition: all 500ms;
+  }
+  btn:hover{
+    border-radius: 12px;
+}
 
 /* List component */
 .list{
-    background-color: rgb(255, 202, 202);
+    background-color: rgb(255, 255, 255);
     list-style: none;
     margin: 0;
     padding: 15px;
     border-radius: 2px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    /*box-shadow: 0 2px 6px rgba(0,0,0,0.15);*/
 }
 
     .list .list-item{

@@ -14,7 +14,7 @@ section{
 }
 
 .btn{
-position : relative;
+position : absolute;
 Top : 15px;
   text-align: center;
   padding: .5em .75em;
