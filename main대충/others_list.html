@@ -47,7 +47,7 @@
         </li>
     </ul>
     <button type="button" onclick="MoveToPic()" class="btn">사진 다시 찍기</button>
-    <button type="button" onclick="MoveToPic()" class="btn">처음으로</button>
+    <button type="button" onclick="MoveToHome()" class="btn">처음으로</button>
     </div>
     <script type="text/javascript">
         document.getElementById("img1").src = 'images/flower.png'; // flower대신에 val1값 넣기
@@ -67,6 +67,9 @@
         function moveToPic(){
             location.href = ''
         }
+        function MoveToHome() {
+                window.location.href = 'index.html';
+            }
     </script>
 </body>
 </html>

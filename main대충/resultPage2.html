@@ -6,13 +6,20 @@
     <title>Document</title>
 </head>
 <body>
+    <button type="button" onclick="MoveToResult2()" class="btn">이 꽃이 아닌가요?</button>
+    
     <script type="text/javascript">
+        var rname3;
+        var rname4;
+        var rname5;
+        var category;
         document.addEventListener("DOMContentLoaded", function () {
-            var val = location.href.substr(
-                location.href.lastIndexOf('=') + 1
-            );
-            document.write(decodeURI(val));
+            var temp = location.href.split('?'); // split 계속!
         });
+
+        function MoveToResult2() {
+                window.location.href = "others_list.html"+"&index3="+rname3+"&index4="+rname4+"&index5="+rname5+"&category="+category;
+            }
     </script>
 </body>
 </html>

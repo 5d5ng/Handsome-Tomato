@@ -17,6 +17,10 @@
         
         <script type="text/javascript">
             var rname2;
+            var rname3;
+            var rname4;
+            var rname5;
+            var category;
             document.addEventListener('DOMContentLoaded', function () {
                 // 5까지 나누기
                 var temp = location.href.split('?'); //주소?로 나누기
@@ -25,12 +29,20 @@
                 var rname1 = result1[1]; //=으로 나눈부분 중 뒷부분(첫번째 정답)
                 var result2 = data[1].split('='); //&로 나눠진뒷부분 =으로 나누기
                 rname2 = result2[1]; //=으로 나눈부분 중 뒷부분(두번째 정답)
+                var result3 = data[2].split('=');
+                rname3 = result3[1];
+                var result4 = data[3].split('=');
+                rname4 = result4[1];
+                var result5 = data[4].split('=');
+                rname5 = result5[1];
+                var result6 = data[5].split('=');
+                category = result6[1];
                 document.getElementById("rname").innerText = decodeURIComponent(rname1); //id=rname인 부분을 rname1값으로 바꾸기
                 
             });
 
             function MoveToResult2() {
-                window.location.href = 'resultPage2.html?index='+rname2;
+                window.location.href = 'resultPage2.html?index='+rname2+"&index3="+rname3+"&index4="+rname4+"&index5="+rname5+"&category="+category; // flowerPic 다시 넣어야됨
             }
 
             function MoveToHome() {
