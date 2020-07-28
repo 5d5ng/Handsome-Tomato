@@ -16,6 +16,10 @@ body{
     border-radius: 6px;
 }
 
+#title_set{
+    text-align: center;
+}
+
 .btn{
     position : relative;
     Top : 15px;

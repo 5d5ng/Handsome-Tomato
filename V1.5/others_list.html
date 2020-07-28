@@ -8,6 +8,7 @@
 </head>
 <body>
     <div class="list-wrapper">
+        <h5 id="title_set"></h5>
         <ul class="list">
     
         <!--Flexbox list item-->
@@ -17,7 +18,7 @@
             </div>
             <div class="list-item__content">
                 
-                <h4 id="s1">튤립</h4> <!-- val1 받아오면 튤립 지우기 -->
+                <h4 id="s1"></h4> <!-- val1 받아오면 튤립 지우기 -->
                 <p> 뭐시기이다 </p> <!-- 아마 위키백과 설명 -->
             </div>
         </li>
@@ -29,7 +30,7 @@
                 <!-- 나중에 이미지 해당하는 사진 -->
             </div>
             <div class="list-item__content">
-                <h4 id="s2">장미</h4> <!-- val2 받아오면 장미 지우기 -->
+                <h4 id="s2"></h4> <!-- val2 받아오면 장미 지우기 -->
                 <p>뭐시기이다</p>
             </div>
         </li>
@@ -40,7 +41,7 @@
                 <img alt="Thumbnail" id="img3">
             </div>
             <div class="list-item__content">
-                <h4 id="s3">해바라기</h4> <!-- val3 받아오면 해바라기 지우기 -->
+                <h4 id="s3"></h4> <!-- val3 받아오면 해바라기 지우기 -->
                 <p>뭐시기이다</p>
             </div>
         </li>
@@ -67,6 +68,7 @@
             document.getElementById("s1").innerHTML=decodeURI(val1);
             document.getElementById("s2").innerHTML=decodeURI(val2);
             document.getElementById("s3").innerHTML=decodeURI(val3);
+            TitleSet();
         });
 
         function MoveToPic(){
@@ -75,6 +77,27 @@
         function MoveToHome() {
                 window.location.href = 'index.html';
             }
+        function TitleSet(){
+            if(category==='flowerPic'){
+                window.addEventListener("load", function(){
+                    document.getElementById("title_set").innerHTML='비슷하게 생긴 이런 꽃들도 있어요';
+                })
+            }
+            else if(category==='fruitsPic'){
+                window.addEventListener("load", function(){
+                    document.getElementById("title_set").innerHTML='비슷하게 생긴 이런 과일들도 있어요';
+                })
+            }
+            else if(category==='mushroomPic'){
+                window.addEventListener("load", function(){
+                    document.getElementById("title_set").innerHTML='비슷하게 생긴 이런 버섯들도 있어요';
+                })
+            }else{
+                window.addEventListener("load", function(){
+                    document.getElementById("title_set").innerHTML='비슷하게 생긴 이런 풀들도 있어요';
+                })
+            }
+        }
     </script>
 </body>
 </html>
