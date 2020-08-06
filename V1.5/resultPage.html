@@ -12,10 +12,13 @@
             <div id="description">설명</div>
             <button type="button" onclick="MoveToResult2()" class="btn">이 꽃이 아닌가요?</button>
             <button type="button" onclick="MoveToHome()" class="btn">돌아가기</button>
+            <button type="button" onclick="MoveToDic()" class="btn">설명보기</button>
+
         </section>
 
         
         <script type="text/javascript">
+            var rname1;
             var rname2;
             var rname3;
             var rname4;
@@ -25,7 +28,7 @@
                 var temp = location.href.split('?'); //주소?로 나누기
                 var data = temp[1].split('&'); //?뒷부분 &로 나누기
                 var result1 = data[0].split('='); //&로 나눠진앞부분 =으로 나누기
-                var rname1 = result1[1]; //=으로 나눈부분 중 뒷부분(첫번째 정답)
+                rname1 = result1[1]; //=으로 나눈부분 중 뒷부분(첫번째 정답)
                 var result2 = data[1].split('='); //&로 나눠진뒷부분 =으로 나누기
                 rname2 = result2[1]; //=으로 나눈부분 중 뒷부분(두번째 정답)
                 var result3 = data[2].split('=');
@@ -44,6 +47,9 @@
 
             function MoveToHome() {
                 window.location.href = 'index.html';
+            }
+            function MoveToDic(){
+                window.location.href = 'https://ko.wikipedia.org/wiki/'+rname1;
             }
         </script>
            <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
