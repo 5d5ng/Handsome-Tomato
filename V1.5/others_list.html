@@ -1,103 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style_others.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style_others.css" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="list-wrapper">
-        <h5 id="title_set"></h5>
-        <ul class="list">
-    
+      <h5 id="title_set"></h5>
+      <ul class="list">
         <!--Flexbox list item-->
         <li class="list-item">
-            <div class="list-item__image">
-                <img alt="Thumbnail" id="img1">
-            </div>
-            <div class="list-item__content">
-                
-                <h4 id="s1"></h4> <!-- val1 받아오면 튤립 지우기 -->
-                <p> 뭐시기이다 </p> <!-- 아마 위키백과 설명 -->
-            </div>
+          <div class="list-item__image">
+            <img alt="Thumbnail" id="img1" />
+          </div>
+          <div class="list-item__content">
+            <h4 id="s1"></h4>
+            <!-- val1 받아오면 튤립 지우기 -->
+            <button id="item-1" class="small-btn">설명보기</button>
+            <!-- 아마 위키백과 설명 -->
+          </div>
         </li>
-    
+
         <!--Flexbox list item-->
         <li class="list-item">
-            <div class="list-item__image">
-                <img alt="Thumbnail" id="img2">
-                <!-- 나중에 이미지 해당하는 사진 -->
-            </div>
-            <div class="list-item__content">
-                <h4 id="s2"></h4> <!-- val2 받아오면 장미 지우기 -->
-                <p>뭐시기이다</p>
-            </div>
+          <div class="list-item__image">
+            <img alt="Thumbnail" id="img2" />
+            <!-- 나중에 이미지 해당하는 사진 -->
+          </div>
+          <div class="list-item__content">
+            <h4 id="s2"></h4>
+            <!-- val2 받아오면 장미 지우기 -->
+            <button id="item-2" class="small-btn">설명보기</button>
+          </div>
         </li>
-    
+
         <!--Flexbox list item-->
         <li class="list-item">
-            <div class="list-item__image">
-                <img alt="Thumbnail" id="img3">
-            </div>
-            <div class="list-item__content">
-                <h4 id="s3"></h4> <!-- val3 받아오면 해바라기 지우기 -->
-                <p>뭐시기이다</p>
-            </div>
+          <div class="list-item__image">
+            <img alt="Thumbnail" id="img3" />
+          </div>
+          <div class="list-item__content">
+            <h4 id="s3"></h4>
+            <!-- val3 받아오면 해바라기 지우기 -->
+            <button id="item-3" class="small-btn">설명보기</button>
+          </div>
         </li>
-    </ul>
-    <button type="button" onclick="MoveToPic()" class="btn">사진 다시 찍기</button>
-    <button type="button" onclick="MoveToHome()" class="btn">처음으로</button>
+      </ul>
+      <button type="button" onclick="MoveToPic()" class="btn">
+        사진 다시 찍기
+      </button>
+      <button type="button" onclick="MoveToHome()" class="btn">처음으로</button>
     </div>
     <script type="text/javascript">
-        // 나중에 식물 대표 사진들 다 저장했을 때 사진 붙이면 됨
-        document.getElementById("img1").src = 'images/flower.png'; // flower대신에 val1값 넣기
-        document.getElementById("img2").src = 'images/flower.png'; // flower대신에 val2값 넣기
-        document.getElementById("img3").src = 'images/flower.png'; // flower대신에 val3값 넣기
-        var val1, val2, val3, category;
-        document.addEventListener("DOMContentLoaded", function () {
-            var data = location.href.split('&');
-            var result3 = data[1].split('=');
-            val1 = result3[1];
-            var result4 = data[2].split('=');
-            val2 = result4[1];
-            var result5 = data[3].split('=');
-            val3 = result5[1];
-            var result6 = data[4].split('=');
-            category = result6[1];
-            document.getElementById("s1").innerHTML=decodeURI(val1);
-            document.getElementById("s2").innerHTML=decodeURI(val2);
-            document.getElementById("s3").innerHTML=decodeURI(val3);
-            if(decodeURIComponent(category)=='flowerpic'){
-                window.addEventListener("load", function(){
-                    document.getElementById("title_set").innerHTML='비슷하게 생긴 이런 꽃들도 있어요';
-                })
-            }
-            else if(decodeURIComponent(category)=='fruitspic'){
-                window.addEventListener("load", function(){
-                    document.getElementById("title_set").innerHTML='비슷하게 생긴 이런 과일들도 있어요';
-                })
-            }
-            else if(decodeURIComponent(category)=='mushroompic'){
-                window.addEventListener("load", function(){
-                    document.getElementById("title_set").innerHTML='비슷하게 생긴 이런 버섯들도 있어요';
-                })
-            }else{
-                window.addEventListener("load", function(){
-                    document.getElementById("title_set").innerHTML='비슷하게 생긴 이런 풀들도 있어요';
-                })
-            }
-        });
+      // 나중에 식물 대표 사진들 다 저장했을 때 사진 붙이면 됨
+      document.getElementById("img1").src = "images/flower.png"; // flower대신에 val1값 넣기
+      document.getElementById("img2").src = "images/flower.png"; // flower대신에 val2값 넣기
+      document.getElementById("img3").src = "images/flower.png"; // flower대신에 val3값 넣기
+      var category;
+      var valueList = [];
+      document.addEventListener("DOMContentLoaded", function () {
+        var data = location.href.split("&");
+        var result3 = data[1].split("=");
 
-        function MoveToPic(){
-            window.location.href = category+".html";
-        }
-        function MoveToHome() {
-                window.location.href = 'index.html';
-            }
-        function TitleSet(){
+        valueList.push(result3[1]);
+        var result4 = data[2].split("=");
+
+        valueList.push(result4[1]);
+
+        var result5 = data[3].split("=");
+
+        valueList.push(result5[1]);
+
+        var result6 = data[4].split("=");
+        category = result6[1];
+        for(var i=1;i<=3;i++){
+        document.getElementById("s"+i).innerHTML = decodeURI(valueList[i-1]);
 
         }
+
+        if (decodeURIComponent(category) == "flowerpic") {
+          window.addEventListener("load", function () {
+            document.getElementById("title_set").innerHTML =
+              "비슷하게 생긴 이런 꽃들도 있어요";
+          });
+        } else if (decodeURIComponent(category) == "fruitspic") {
+          window.addEventListener("load", function () {
+            document.getElementById("title_set").innerHTML =
+              "비슷하게 생긴 이런 과일들도 있어요";
+          });
+        } else if (decodeURIComponent(category) == "mushroompic") {
+          window.addEventListener("load", function () {
+            document.getElementById("title_set").innerHTML =
+              "비슷하게 생긴 이런 버섯들도 있어요";
+          });
+        } else {
+          window.addEventListener("load", function () {
+            document.getElementById("title_set").innerHTML =
+              "비슷하게 생긴 이런 풀들도 있어요";
+          });
+        }
+      });
+      for (var i = 1; i <= 3; i++) {
+        toDic(i);
+      }
+      function toDic(value) {
+        //위키백과로 이동하게함 value는 숫자
+        document
+          .getElementById("item-" + value)
+          .addEventListener("click", function () {
+            window.location.href =
+              "https://ko.wikipedia.org/wiki/" + valueList[value - 1]; //item-1부터 시작이라 -1뺌
+          });
+      }
+
+      function MoveToPic() {
+        window.location.href = category + ".html";
+      }
+      function MoveToHome() {
+        window.location.href = "index.html";
+      }
+      function TitleSet() {}
+
     </script>
-</body>
+  </body>
 </html>
