@@ -7,9 +7,8 @@
     </head>
     <body>
         <section>
-            <div>사진</div>
+            <div id="pic"></div>
             <div id="rname">답</div>
-            <div id="description">설명</div>
             <button type="button" onclick="MoveToResult2()" class="btn">이 꽃이 아닌가요?</button>
             <button type="button" onclick="MoveToHome()" class="btn">돌아가기</button>
             <button type="button" onclick="MoveToDic()" class="btn">설명보기</button>
@@ -38,7 +37,7 @@
                 var result5 = data[4].split('=');
                 category = result5[1];
                 document.getElementById("rname").innerText = decodeURIComponent(rname1); //id=rname인 부분을 rname1값으로 바꾸기
-                
+                DisplayPic(category);
             });
 
             function MoveToResult2() {
@@ -51,28 +50,26 @@
             function MoveToDic(){
                 window.location.href = 'https://ko.wikipedia.org/wiki/'+rname1;
             }
-        </script>
-           <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-        <script>
-   /* function readTextFile(file) {
-        var rawFile = new XMLHttpRequest();
-        rawFile.open("GET", file, false);
-        rawFile.onreadystatechange = function () {
-            if(rawFile.readyState === 4)
-            {
-                if(rawFile.status === 200 || rawFile.status == 0)
-                {
-                    var allText = rawFile.responseText;
-                    alert(allText);
+            function DisplayPic(category){
+                var img = new Image();
+                var div = document.getElementById('pic');
+                img.src = category+'/'+rname1+".jpg";
+                img.onload = function(){
+                    div.appendChild(img);
+                };
+                img.onerror = function(){
+                    img.src = category + '/'+rname1+".jpeg";
+                    img.onload = function(){
+                    div.appendChild(img);
+                    };
+                    img.onerror = function(){
+                        img.src = category+'/'+"이미지자료없음.jpg";
+                        div.appendChild(img)
+                    }
                 }
+                img.style.height = '200px'
+                img.style.width = '200px'
             }
-        };
-        rawFile.send(null);
-    }
-    readTextFile("wikipedia_api/flower/나팔꽃.txt");*/
-    $(function(){
-$( "#description" ).load( "wikipedia_api/flower/나팔꽃.txt" );
-});
         </script>
     </body>
 </html>

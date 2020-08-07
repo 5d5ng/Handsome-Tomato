@@ -17,7 +17,6 @@
           </div>
           <div class="list-item__content">
             <h4 id="s1"></h4>
-            <!-- val1 받아오면 튤립 지우기 -->
             <button id="item-1" class="small-btn">설명보기</button>
             <!-- 아마 위키백과 설명 -->
           </div>
@@ -31,7 +30,6 @@
           </div>
           <div class="list-item__content">
             <h4 id="s2"></h4>
-            <!-- val2 받아오면 장미 지우기 -->
             <button id="item-2" class="small-btn">설명보기</button>
           </div>
         </li>
@@ -43,7 +41,6 @@
           </div>
           <div class="list-item__content">
             <h4 id="s3"></h4>
-            <!-- val3 받아오면 해바라기 지우기 -->
             <button id="item-3" class="small-btn">설명보기</button>
           </div>
         </li>
@@ -55,9 +52,6 @@
     </div>
     <script type="text/javascript">
       // 나중에 식물 대표 사진들 다 저장했을 때 사진 붙이면 됨
-      document.getElementById("img1").src = "images/flower.png"; // flower대신에 val1값 넣기
-      document.getElementById("img2").src = "images/flower.png"; // flower대신에 val2값 넣기
-      document.getElementById("img3").src = "images/flower.png"; // flower대신에 val3값 넣기
       var category;
       var valueList = [];
       document.addEventListener("DOMContentLoaded", function () {
@@ -101,6 +95,9 @@
               "비슷하게 생긴 이런 풀들도 있어요";
           });
         }
+        for(var i=1;i<=3;i++){
+          DisplayPic(category, 'img'+ String(i), valueList[i-1]);
+        }
       });
       for (var i = 1; i <= 3; i++) {
         toDic(i);
@@ -121,8 +118,25 @@
       function MoveToHome() {
         window.location.href = "index.html";
       }
-      function TitleSet() {}
-
+      function DisplayPic(category, name, value){
+        var img = new Image();
+        var div = document.getElementById(name);
+        var arr = ['.jpg', '.jpeg', '.png', '.bmp', 'svg'];
+        img.src = category+'/'+value+arr[0];
+        img.onload = function(){
+          div.appendChild(img);
+        };
+        img.onerror = function(){
+          img.src = category + '/'+value+arr[1];
+          img.onload = function(){
+            div.appendChild(img);
+          };
+          img.onerror = function(){
+            img.src = category+'/'+"이미지자료없음.jpg";
+            div.appendChild(img)
+          }
+        }
+      }
     </script>
   </body>
 </html>
