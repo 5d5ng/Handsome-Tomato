@@ -119,21 +119,16 @@
         window.location.href = "index.html";
       }
       function DisplayPic(category, name, value){
-        var img = new Image();
         var div = document.getElementById(name);
-        var arr = ['.jpg', '.jpeg', '.png', '.bmp', 'svg'];
-        img.src = category+'/'+value+arr[0];
-        img.onload = function(){
-          div.appendChild(img);
-        };
-        img.onerror = function(){
-          img.src = category + '/'+value+arr[1];
-          img.onload = function(){
-            div.appendChild(img);
-          };
-          img.onerror = function(){
-            img.src = category+'/'+"이미지자료없음.jpg";
-            div.appendChild(img)
+        var arr = ['.jpg', '.jpeg', '.png'];
+        div.src = category+'/'+value+arr[0];
+        div.onerror = function(){
+          div.src = category + '/'+value+arr[1];
+          div.onerror = function(){
+            div.src = category + '/'+value+arr[2];
+            div.onerror = function(){
+              div.src = category+'/'+"이미지자료없음.jpg";
+            }
           }
         }
       }
