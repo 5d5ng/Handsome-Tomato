@@ -54,6 +54,7 @@
                 var img = new Image();
                 var div = document.getElementById('pic');
                 img.src = category+'/'+rname1+".jpg";
+                console.log(img.src);
                 img.onload = function(){
                     div.appendChild(img);
                 };
