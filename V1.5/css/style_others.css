@@ -2,19 +2,30 @@ body{
     color: #555;
 	  background-color: #ffffff;
 }
-
+div{
+    display: block;
+}
 .list-wrapper{
 	width: 95%;
-  max-width: 600px;
+    max-width: 600px;
     margin: 30px auto;
-    position: absolute;
+    position: relative;
     top: 50%;
-    left: 50%;
+    /* left: 50%;
     transform: translate(-50%, -50%);
     padding: 3.5em .75em;
     border: 1px solid #e8e8e8;
-    border-radius: 6px;
+    border-radius: 6px; */
 }
+#disqus_thread{
+    width: 95%;
+    max-width: 600px;
+    margin: 30px auto;
+    position: relative;
+    top: 50%;
+    
+}
+
 
 #title_set{
     text-align: center;

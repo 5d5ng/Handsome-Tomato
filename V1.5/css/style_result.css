@@ -1,15 +1,15 @@
-section{
-    width: 95%;
+section, #disqus_thread{
+    /* width: 95%;
     max-width: 750px;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); */
     text-align: center;
     padding: 3.5em .75em;
-    border: 1px solid #e8e8e8;
-    border-radius: 6px;
-    background: #fff;
+    /* border: 1px solid #e8e8e8;
+    /* border-radius: 6px; */
+    background: #fff; 
   }
   .btn{
     position : relative;
