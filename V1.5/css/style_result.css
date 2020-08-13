@@ -1,12 +1,20 @@
 section, #disqus_thread{
+  width: 95%;
+    max-width: 600px;
+    margin: 30px auto;
+    position: relative;
+    /* top: 50%; */
     /* width: 95%;
-    max-width: 750px;
+    */
+    /* max-width: 750px; */
+    /*
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); */
     text-align: center;
     padding: 3.5em .75em;
+    /* max-width: 600px; */
     /* border: 1px solid #e8e8e8;
     /* border-radius: 6px; */
     background: #fff; 

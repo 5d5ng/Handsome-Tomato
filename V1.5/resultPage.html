@@ -9,7 +9,7 @@
         <section>
             <div id="pic"></div>
             <div id="rname">답</div>
-            <button type="button" onclick="MoveToResult2()" class="btn">이 꽃이 아닌가요?</button>
+            <button type="button" onclick="MoveToResult2()" class="btn" >다른 것 같나요?</button>
             <button type="button" onclick="MoveToHome()" class="btn">돌아가기</button>
             <button type="button" onclick="MoveToDic()" class="btn">설명보기</button>
             
@@ -57,6 +57,7 @@
                 var result5 = data[4].split('=');
                 category = result5[1];
                 document.getElementById("rname").innerText = decodeURIComponent(rname1); //id=rname인 부분을 rname1값으로 바꾸기
+                
                 DisplayPic(category);
             });
 
