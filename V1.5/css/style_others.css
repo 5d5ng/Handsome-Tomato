@@ -5,25 +5,27 @@ body{
 div{
     display: block;
 }
-.list-wrapper{
+.list-wrapper , .addthis_inline_share_toolbox_lp9a{
 	width: 95%;
     max-width: 600px;
     margin: 30px auto;
     position: relative;
     top: 50%;
-    
+    padding: 1em;
     /* left: 50%;
     transform: translate(-50%, -50%);
     padding: 3.5em .75em;
     border: 1px solid #e8e8e8;
     border-radius: 6px; */
 }
+.addthis_inline_share_toolbox_lp9a{
+    text-align: center;
+}
 #disqus_thread{
     width: 95%;
     max-width: 600px;
-    margin: 30px auto;
+    margin: auto;
     position: relative;
-    top: 50%;
     
 }
 
