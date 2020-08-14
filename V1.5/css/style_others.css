@@ -52,8 +52,7 @@ div{
 .btn{
     position : relative;
     Top : 15px;
-    left: 25%;
-    text-align: center;
+    left: 20%;
     padding: .5em .75em;
     background: pink;
     background: linear-gradient(to right, pink, lightpink);
