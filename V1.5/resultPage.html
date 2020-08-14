@@ -99,8 +99,14 @@
                     div.appendChild(img);
                     };
                     img.onerror = function(){
-                        img.src = category+'/'+"이미지자료없음.jpg";
-                        div.appendChild(img)
+                        img.src = category + '/'+rname1+".png";
+                        img.onload = function(){
+                            dib.appendChild(img);
+                        };
+                        img.onerror = function(){
+                            img.src = category+'/'+"이미지자료없음.jpg";
+                            div.appendChild(img)
+                        };
                     }
                 }
                 img.style.height = '200px'
