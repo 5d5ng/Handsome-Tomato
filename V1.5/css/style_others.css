@@ -38,12 +38,11 @@ div{
     background: pink;
     text-align: center;
     background: pink;
-    width: 25%;
     height: 25px;
     background: linear-gradient(to right, pink, lightpink);
     border: none;
     font-weight: 300;
-    font-size: 1.25EM;
+    font-size: 1EM;
     color: #fff;
     border-radius: 4px;
     transition: all 500ms;
@@ -57,7 +56,7 @@ div{
     background: linear-gradient(to right, pink, lightpink);
     border: none;
     font-weight: 300;
-    font-size: 1.25EM;
+    font-size: 1EM;
     color: #fff;
     border-radius: 4px;
     transition: all 500ms;
