@@ -3,12 +3,13 @@ body{
   top: 50px;
   text-align: center;
 }
-
+.share{
+  position: relative;
+  top:5px;
+}
 footer{
   font-size: 5px;
-
 }
-
 #disqus_thread{
 
   max-width: 600px;
