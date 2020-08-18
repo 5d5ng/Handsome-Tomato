@@ -15,7 +15,14 @@ footer{
 .menu{
   display: inline;
 }
-
+.center { 
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 733.1px;
+  width: 1700px;
+}
 ul{
  display: flexbox;
  list-style-type: none;
