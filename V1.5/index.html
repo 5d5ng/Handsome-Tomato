@@ -10,7 +10,8 @@
   <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f34f85e278311a2"></script>
 
-
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script> 
+<!-- 카카오 API기능 -->
 
   <script src="https://kit.fontawesome.com/c5a11c1975.js" crossorigin="anonymous"></script>
   
@@ -20,9 +21,11 @@
 
 </head>
 <body>
+
   <div class="loading"><h1>loading</h1></div>
   <div class="title"><h1>Forest Snap</h1></div>
   <div class="menu">
+    
     <ul>
     <li class="flower">
       <input type="image" width="10%" id="image" alt="Login" src="img/flower.png" onclick="MoveToSearch('flowerpic')">
@@ -58,5 +61,45 @@
           $('.loading').delay('3000').fadeOut();
       });
     </script>
+
+
+<script>Kakao.init('JAVASCRIPT_KEY');
+// Kakao.Link.createDefaultButton(settings);
+
+  // SDK 초기화 여부를 판단합니다.
+  console.log(Kakao.isInitialized());
+  Kakao.Link.createDefaultButton({
+  container: '#CONTAINER_ID',
+  objectType: 'feed',
+  content: {
+    title: '디저트 사진',
+    description: '아메리카노, 빵, 케익',
+    imageUrl:
+      'http://mud-kage.kakao.co.kr/dn/NTmhS/btqfEUdFAUf/FjKzkZsnoeE4o19klTOVI1/openlink_640x640s.jpg',
+    link: {
+      mobileWebUrl: 'https://developers.kakao.com',
+      androidExecParams: 'test',
+    },
+  },
+  social: {
+    likeCount: 10,
+    commentCount: 20,
+    sharedCount: 30,
+  },
+  buttons: [
+    {
+      title: '웹으로 이동',
+      link: {
+        mobileWebUrl: 'https://developers.kakao.com',
+      },
+    },
+    {
+      title: '앱으로 이동',
+      link: {
+        mobileWebUrl: 'https://developers.kakao.com',
+      },
+    },
+  ]
+});</script>
 </body>
 </html>
