@@ -90,6 +90,11 @@
           <a href="https://www.flaticon.com/" title="Flaticon">
             www.flaticon.com</a
           >
+          <a id="kakao-link-btn" href="javascript:sendLink()">
+            <img
+              src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
+            />
+          </a>
         </footer>
       </div>
 
@@ -115,7 +120,7 @@
         Kakao.init("0b24d43fac19bb4524f58083eb6b5439");
         // Kakao.Link.createDefaultButton(settings);
         Kakao.Link.createDefaultButton({
-          container: "#CONTAINER_ID",
+          container: "#kakao-link-btn",
           objectType: "feed",
           content: {
             title: "디저트 사진",
