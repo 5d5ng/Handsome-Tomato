@@ -1,10 +1,7 @@
 body{
-  position: absolute;
-    top: 50%;
-    text-align: center;
-    left: 50%;
-    transform: translate(-50%,-50%);
-
+  position: relative;
+  top: 50px;
+  text-align: center;
 }
 .share{
   position: relative;
