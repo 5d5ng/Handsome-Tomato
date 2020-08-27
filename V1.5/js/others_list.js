@@ -54,10 +54,6 @@ Kakao.Link.createDefaultButton({
   (d.head || d.body).appendChild(s);
 })();
 
-<noscript>
-  Please enable JavaScript to view the
-  <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-</noscript>;
 
 // 나중에 식물 대표 사진들 다 저장했을 때 사진 붙이면 됨
 var category;
