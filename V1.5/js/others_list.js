@@ -100,7 +100,7 @@ function DisplayPic(category, name, value) {
   };
 }
 // SDK를 초기화 합니다. 사용할 앱의 JavaScript 키를 설정해 주세요.
-Kakao.init("0b24d43fac19bb4524f58083eb6b5439");
+//Kakao.init("0b24d43fac19bb4524f58083eb6b5439");
 
 // SDK 초기화 여부를 판단합니다.
 console.log(Kakao.isInitialized());
