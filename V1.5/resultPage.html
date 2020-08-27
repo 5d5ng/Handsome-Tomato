@@ -130,43 +130,46 @@
         img.style.width = "200px";
       }
     </script>
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script>
+      // SDK를 초기화 합니다. 사용할 앱의 JavaScript 키를 설정해 주세요.
+      Kakao.init("0b24d43fac19bb4524f58083eb6b5439");
 
-<!-- <script>
-    Kakao.init("0b24d43fac19bb4524f58083eb6b5439");
-    // Kakao.Link.createDefaultButton(settings);
-    Kakao.Link.createDefaultButton({
-      container: "#kakao-link-btn",
-      objectType: "feed",
-      content: {
-        title: "디저트 사진",
-        description: "아메리카노, 빵, 케익",
-        imageUrl:
-          "http://mud-kage.kakao.co.kr/dn/NTmhS/btqfEUdFAUf/FjKzkZsnoeE4o19klTOVI1/openlink_640x640s.jpg",
-        link: {
-          mobileWebUrl: "https://developers.kakao.com",
-          androidExecParams: "test",
-        },
-      },
-      // social: {
-      //   likeCount: 10,
-      //   commentCount: 20,
-      //   sharedCount: 30,
-      // },
-      buttons: [
-        {
-          title: "웹으로 이동",
+      // SDK 초기화 여부를 판단합니다.
+      console.log(Kakao.isInitialized());
+      Kakao.Link.createDefaultButton({
+        container: "#CONTAINER_ID",
+        objectType: "feed",
+        content: {
+          title: "디저트 사진",
+          description: "아메리카노, 빵, 케익",
+          imageUrl:
+            "http://mud-kage.kakao.co.kr/dn/NTmhS/btqfEUdFAUf/FjKzkZsnoeE4o19klTOVI1/openlink_640x640s.jpg",
           link: {
             mobileWebUrl: "https://developers.kakao.com",
+            androidExecParams: "test",
           },
         },
-        {
-          title: "앱으로 이동",
-          link: {
-            mobileWebUrl: "https://developers.kakao.com",
-          },
+        social: {
+          likeCount: 10,
+          commentCount: 20,
+          sharedCount: 30,
         },
-      ],
-    });
-  </script> -->
+        buttons: [
+          {
+            title: "웹으로 이동",
+            link: {
+              mobileWebUrl: "https://developers.kakao.com",
+            },
+          },
+          {
+            title: "앱으로 이동",
+            link: {
+              mobileWebUrl: "https://developers.kakao.com",
+            },
+          },
+        ],
+      });
+    </script>
   </body>
 </html>
