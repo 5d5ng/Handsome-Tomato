@@ -1,121 +1,130 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Forest Snap</title>
-  <link rel="stylesheet" href="css/style_index.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
-  <!-- Go to www.addthis.com/dashboard to customize your tools -->
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f34f85e278311a2"></script>
-
-<script src="https://developers.kakao.com/sdk/js/kakao.js"></script> 
-<!-- 카카오 API기능 -->
-
-  <script src="https://kit.fontawesome.com/c5a11c1975.js" crossorigin="anonymous"></script>
-  
-   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-   rel="stylesheet">
-  
-
-</head>
-<body>
-
-  <div class="loading"><h1>loading</h1></div>
-  <div class="title" style="font: size 20px"><h1>Forest Snap</h1></div>
-  <div class="menu">
-    
-    <ul>
-    <li class="flower">
-      <input type="image" width="95x" id="image" alt="Login" src="img/flower.png" onclick="MoveToSearch('flowerpic')">
-    </li>
-    <li class="mushroom">
-      <input type="image" width="95x" id="image" alt="Login" src="img/mushroom.png" onclick="MoveToSearch('mushroompic')">
-    </li>
-    <li class="fruits">
-      <input type="image" width="95x" id="image" alt="Login" src="img/fruits.png" onclick="MoveToSearch('fruitspic')">
-    </li>
-    <li class="greens">
-      <input type="image" width="95x" id="image" alt="Login" src="img/plant.png" onclick="MoveToSearch('plantpic')">
-
-    </li>
-  </ul>
-
-                <!-- Go to www.addthis.com/dashboard to customize your tools -->
-                <div class="share">
-                <div class="addthis_inline_share_toolbox_lp9a"></div>
-            
-  <!-- <i class="fas fa-flower-tulip"></i> -->
-  <footer>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></footer>
-</div>
-  <script>
-    function MoveToSearch(name){
-      window.location.href = name+".html";
-    }
-    
-  </script>
-     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-     <script type="text/javascript">
-      $(window).on('load', function() {
-          $('.loading').delay('3000').fadeOut();
-      });
-    </script>
-
-
-<script>Kakao.init('0b24d43fac19bb4524f58083eb6b5439');
-// Kakao.Link.createDefaultButton(settings);
-Kakao.Link.createScrapButton(DefaultButtonSettings);
-  // SDK 초기화 여부를 판단합니다.
-  console.log(Kakao.isInitialized());
-  Kakao.API.request({
-  url: '/v2/api/talk/memo/default/send'
-});
-  </script>
-  <a id="kakao-link-btn" href="javascript:sendLink()">
-    <img
-      src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forest Snap</title>
+    <link rel="stylesheet" href="css/style_index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
     />
-  </a>
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script
+      type="text/javascript"
+      src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f34f85e278311a2"
+    ></script>
 
-  <script type="text/javascript">
-    function sendLink() {
-      Kakao.Link.sendDefault({
-        objectType: 'feed',
-        content: {
-          title: '딸기 치즈 케익',
-          description: '#케익 #딸기 #삼평동 #카페 #분위기 #소개팅',
-          imageUrl:
-            'http://k.kakaocdn.net/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
-          link: {
-            mobileWebUrl: 'https://developers.kakao.com',
-            webUrl: 'https://developers.kakao.com',
-          },
-        },
-        social: {
-          likeCount: 286,
-          commentCount: 45,
-          sharedCount: 845,
-        },
-        buttons: [
-          {
-            title: '웹으로 보기',
-            link: {
-              mobileWebUrl: 'https://developers.kakao.com',
-              webUrl: 'https://developers.kakao.com',
-            },
-          },
-          {
-            title: '앱으로 보기',
-            link: {
-              mobileWebUrl: 'https://developers.kakao.com',
-              webUrl: 'https://developers.kakao.com',
-            },
-          },
-        ],
-      })
-    }
-  </script>
-  
-</body>
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <!-- 카카오 API기능 -->
+
+    <script
+      src="https://kit.fontawesome.com/c5a11c1975.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="loading"><h1>loading</h1></div>
+    <div class="title" style="font: size 20px"><h1>Forest Snap</h1></div>
+    <class class="menu">
+      <ul>
+        <li class="flower">
+          <input
+            type="image"
+            width="95x"
+            id="image"
+            alt="Login"
+            src="img/flower.png"
+            onclick="MoveToSearch('flowerpic')"
+          />
+        </li>
+        <li class="mushroom">
+          <input
+            type="image"
+            width="95x"
+            id="image"
+            alt="Login"
+            src="img/mushroom.png"
+            onclick="MoveToSearch('mushroompic')"
+          />
+        </li>
+        <li class="fruits">
+          <input
+            type="image"
+            width="95x"
+            id="image"
+            alt="Login"
+            src="img/fruits.png"
+            onclick="MoveToSearch('fruitspic')"
+          />
+        </li>
+        <li class="greens">
+          <input
+            type="image"
+            width="95x"
+            id="image"
+            alt="Login"
+            src="img/plant.png"
+            onclick="MoveToSearch('plantpic')"
+          />
+        </li>
+      </ul>
+
+      <!-- Go to www.addthis.com/dashboard to customize your tools -->
+      <div class="share">
+        <div class="addthis_inline_share_toolbox_lp9a"></div>
+
+        <!-- <i class="fas fa-flower-tulip"></i> -->
+        <footer>
+          Icons made by
+          <a href="https://www.flaticon.com/authors/freepik" title="Freepik"
+            >Freepik</a
+          >
+          from
+          <a href="https://www.flaticon.com/" title="Flaticon">
+            www.flaticon.com</a
+          >
+        </footer>
+      </div>
+
+
+      <script>
+        function MoveToSearch(name) {
+          window.location.href = name + ".html";
+        }
+      </script>
+
+
+      <script
+        src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"
+      ></script>
+
+
+      <script type="text/javascript">
+        $(window).on("load", function () {
+          $(".loading").delay("3000").fadeOut();
+        });
+      </script>
+
+      <script>
+        Kakao.init("0b24d43fac19bb4524f58083eb6b5439");
+        // Kakao.Link.createDefaultButton(settings);
+        Kakao.Link.createScrapButton(DefaultButtonSettings);
+        // SDK 초기화 여부를 판단합니다.
+        console.log(Kakao.isInitialized());
+        // Kakao.API.request({
+        //   url: "/v2/api/talk/memo/default/send",
+        // });
+      </script>
+
+      </class>
+  </body>
 </html>
