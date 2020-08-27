@@ -93,20 +93,17 @@
         </footer>
       </div>
 
-
       <script>
         function MoveToSearch(name) {
           window.location.href = name + ".html";
         }
       </script>
 
-
       <script
         src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
         crossorigin="anonymous"
       ></script>
-
 
       <script type="text/javascript">
         $(window).on("load", function () {
@@ -117,14 +114,40 @@
       <script>
         Kakao.init("0b24d43fac19bb4524f58083eb6b5439");
         // Kakao.Link.createDefaultButton(settings);
-        Kakao.Link.createScrapButton(DefaultButtonSettings);
-        // SDK 초기화 여부를 판단합니다.
-        console.log(Kakao.isInitialized());
-        // Kakao.API.request({
-        //   url: "/v2/api/talk/memo/default/send",
-        // });
+        Kakao.Link.createDefaultButton({
+          container: "#CONTAINER_ID",
+          objectType: "feed",
+          content: {
+            title: "디저트 사진",
+            description: "아메리카노, 빵, 케익",
+            imageUrl:
+              "http://mud-kage.kakao.co.kr/dn/NTmhS/btqfEUdFAUf/FjKzkZsnoeE4o19klTOVI1/openlink_640x640s.jpg",
+            link: {
+              mobileWebUrl: "https://developers.kakao.com",
+              androidExecParams: "test",
+            },
+          },
+          social: {
+            likeCount: 10,
+            commentCount: 20,
+            sharedCount: 30,
+          },
+          buttons: [
+            {
+              title: "웹으로 이동",
+              link: {
+                mobileWebUrl: "https://developers.kakao.com",
+              },
+            },
+            {
+              title: "앱으로 이동",
+              link: {
+                mobileWebUrl: "https://developers.kakao.com",
+              },
+            },
+          ],
+        });
       </script>
-
-      </class>
+    </class>
   </body>
 </html>
