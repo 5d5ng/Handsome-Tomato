@@ -4,15 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f34f85e278311a2"></script>
+    <script
+      type="text/javascript"
+      src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f34f85e278311a2"
+    ></script>
 
     <link rel="stylesheet" href="css/style_others.css" />
     <title>Document</title>
   </head>
   <body>
     <div class="list-wrapper">
-
-    
       <h5 id="title_set"></h5>
       <ul class="list">
         <!--Flexbox list item-->
@@ -51,37 +52,47 @@
         </li>
       </ul>
       <div class="menu">
-        <button type="button" onclick="MoveToPic()" class="btn">사진 다시 찍기</button>
-        <button type="button" onclick="MoveToHome()" class="btn">처음으로</button>
+        <button type="button" onclick="MoveToPic()" class="btn">
+          사진 다시 찍기
+        </button>
+        <button type="button" onclick="MoveToHome()" class="btn">
+          처음으로
+        </button>
       </div>
-    
     </div>
 
     <div class="addthis_inline_share_toolbox_lp9a"></div>
-    
+    <a id="kakao-link-btn" href="javascript:sendLink()">
+      <img
+        src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
+      />
+    </a>
     <div id="disqus_thread"></div>
     <script>
-    
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-    /*
+      /**
+       *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+       *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+      /*
     var disqus_config = function () {
     this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
     this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
     */
-    (function() { // DON'T EDIT BELOW THIS LINE
-    var d = document, s = d.createElement('script');
-    s.src = 'https://handsometomato.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-    })();
+      (function () {
+        // DON'T EDIT BELOW THIS LINE
+        var d = document,
+          s = d.createElement("script");
+        s.src = "https://handsometomato.disqus.com/embed.js";
+        s.setAttribute("data-timestamp", +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
     </script>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-       
-
-
+    <noscript
+      >Please enable JavaScript to view the
+      <a href="https://disqus.com/?ref_noscript"
+        >comments powered by Disqus.</a
+      ></noscript
+    >
 
     <script type="text/javascript">
       // 나중에 식물 대표 사진들 다 저장했을 때 사진 붙이면 됨
@@ -102,9 +113,10 @@
 
         var result6 = data[4].split("=");
         category = result6[1];
-        for(var i=1;i<=3;i++){
-        document.getElementById("s"+i).innerHTML = decodeURI(valueList[i-1]);
-
+        for (var i = 1; i <= 3; i++) {
+          document.getElementById("s" + i).innerHTML = decodeURI(
+            valueList[i - 1]
+          );
         }
 
         if (decodeURIComponent(category) == "flowerpic") {
@@ -128,8 +140,8 @@
               "비슷하게 생긴 이런 풀들도 있어요";
           });
         }
-        for(var i=1;i<=3;i++){
-          DisplayPic(category, 'img'+ String(i), valueList[i-1]);
+        for (var i = 1; i <= 3; i++) {
+          DisplayPic(category, "img" + String(i), valueList[i - 1]);
         }
       });
       for (var i = 1; i <= 3; i++) {
@@ -151,21 +163,58 @@
       function MoveToHome() {
         window.location.href = "index.html";
       }
-      function DisplayPic(category, name, value){
+      function DisplayPic(category, name, value) {
         var div = document.getElementById(name);
-        var arr = ['.jpg', '.jpeg', '.png'];
-        div.src = category+'/'+value+arr[0];
-        div.onerror = function(){
-          div.src = category + '/'+value+arr[1];
-          div.onerror = function(){
-            div.src = category + '/'+value+arr[2];
-            div.onerror = function(){
-              div.src = category+'/'+"이미지자료없음.jpg";
-            }
-          }
-        }
+        var arr = [".jpg", ".jpeg", ".png"];
+        div.src = category + "/" + value + arr[0];
+        div.onerror = function () {
+          div.src = category + "/" + value + arr[1];
+          div.onerror = function () {
+            div.src = category + "/" + value + arr[2];
+            div.onerror = function () {
+              div.src = category + "/" + "이미지자료없음.jpg";
+            };
+          };
+        };
       }
     </script>
 
+    <script>
+      Kakao.init("0b24d43fac19bb4524f58083eb6b5439");
+      // Kakao.Link.createDefaultButton(settings);
+      Kakao.Link.createDefaultButton({
+        container: "#kakao-link-btn",
+        objectType: "feed",
+        content: {
+          title: "디저트 사진",
+          description: "아메리카노, 빵, 케익",
+          imageUrl:
+            "http://mud-kage.kakao.co.kr/dn/NTmhS/btqfEUdFAUf/FjKzkZsnoeE4o19klTOVI1/openlink_640x640s.jpg",
+          link: {
+            mobileWebUrl: "https://developers.kakao.com",
+            androidExecParams: "test",
+          },
+        },
+        // social: {
+        //   likeCount: 10,
+        //   commentCount: 20,
+        //   sharedCount: 30,
+        // },
+        buttons: [
+          {
+            title: "웹으로 이동",
+            link: {
+              mobileWebUrl: "https://developers.kakao.com",
+            },
+          },
+          {
+            title: "앱으로 이동",
+            link: {
+              mobileWebUrl: "https://developers.kakao.com",
+            },
+          },
+        ],
+      });
+    </script>
   </body>
 </html>
