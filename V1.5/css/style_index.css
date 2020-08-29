@@ -41,9 +41,10 @@ box-sizing:border-box;
 }
 
 #kakao-link-btn > img{
-  width: 41.5px;
-  height: 42.5px;
-  position: relative;
+  width: 43px;
+  height: 44px;
+  margin-bottom: 10%;
+  margin-left: 5%;
   z-index: 1;
 }
 #kakao-link-btn :hover{
