@@ -47,4 +47,5 @@ box-sizing:border-box;
   left: -112px;
   margin-right: 20px;
   top:46px;
+  z-index: 1;
 }

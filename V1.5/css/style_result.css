@@ -40,4 +40,5 @@ section, #disqus_thread,.addthis_inline_share_toolbox_lp9a{
     left: -105px;
     margin-right: 20px;
     top:42px;
+    z-index: 1;
   }
