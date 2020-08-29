@@ -5,8 +5,7 @@ body{
 }
 .share{
   position: relative;
-  margin-left: 50px;
-  top:15px;
+  margin-left: 5%;
 }
 footer{
   font-size: 5px;
@@ -45,7 +44,7 @@ box-sizing:border-box;
   width: 42px;
   height: 43px;
   position: relative;
-  left: -115px;
+  left: -10.5%px;
   top:46px;
   z-index: 1;
 }
