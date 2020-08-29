@@ -29,6 +29,3 @@ Kakao.Link.createDefaultButton({
   ],
 });
 
-#box{
-  position: relative;
-}
