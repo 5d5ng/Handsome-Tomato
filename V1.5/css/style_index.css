@@ -44,8 +44,6 @@ box-sizing:border-box;
   width: 41.5px;
   height: 42.5px;
   position: relative;
-  margin-right: 20.9%;
-  top: 46px;
   z-index: 1;
 }
 #kakao-link-btn :hover{
