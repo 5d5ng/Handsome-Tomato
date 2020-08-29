@@ -5,7 +5,7 @@ body{
 }
 .share{
   position: relative;
-  margin-left: 5%;
+  top:15px;
 }
 footer{
   font-size: 5px;
@@ -41,11 +41,11 @@ box-sizing:border-box;
 }
 
 #kakao-link-btn > img{
-  width: 42px;
-  height: 43px;
+  width: 41.5px;
+  height: 42.5px;
   position: relative;
-  left: -10.5%px;
-  top:46px;
+  margin-right: 20.9%;
+  top: 46px;
   z-index: 1;
 }
 #kakao-link-btn :hover{
