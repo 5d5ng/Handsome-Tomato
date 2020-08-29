@@ -42,3 +42,8 @@ section, #disqus_thread,.addthis_inline_share_toolbox_lp9a{
     top:42px;
     z-index: 1;
   }
+  #kakao-link-btn :hover{
+    transform: translateY(-4px);
+    colort:#fff;
+    text-decoration: none;
+  }

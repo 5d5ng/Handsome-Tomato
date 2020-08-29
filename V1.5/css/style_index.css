@@ -49,3 +49,8 @@ box-sizing:border-box;
   top:46px;
   z-index: 1;
 }
+#kakao-link-btn :hover{
+  transform: translateY(-4px);
+  colort:#fff;
+  text-decoration: none;
+}
