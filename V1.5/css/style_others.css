@@ -114,3 +114,9 @@ div{
                 color: #AAA;
                 margin-bottom: 0;
             }
+            #kakao-link-btn > img{
+                width: 42px;
+                height: 42px;
+                position: absolute;
+                left: 36.5%;
+              }

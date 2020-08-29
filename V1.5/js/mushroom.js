@@ -61,7 +61,7 @@ async function predict() {
 function MoveToSearch(name, name2, name3, name4) {
   window.location.href =
     "resultpage.html?index=" +
-    map.get(name) +
+    name +
     "&index2=" +
     name2 +
     "&index3=" +

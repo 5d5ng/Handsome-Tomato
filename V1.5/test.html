@@ -1,45 +1,131 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <script>
-    Kakao.Link.sendDefault({
-  objectType: 'feed',
-  content: {
-    title: '디저트 사진',
-    description: '아메리카노, 빵, 케익',
-    imageUrl:
-      'http://mud-kage.kakao.co.kr/dn/NTmhS/btqfEUdFAUf/FjKzkZsnoeE4o19klTOVI1/openlink_640x640s.jpg',
-    link: {
-      mobileWebUrl: 'https://developers.kakao.com',
-      androidExecParams: 'test',
-    },
-  },
-  social: {
-    likeCount: 10,
-    commentCount: 20,
-    sharedCount: 30,
-  },
-  buttons: [
-    {
-      title: '웹으로 이동',
-      link: {
-        mobileWebUrl: 'https://developers.kakao.com',
-      },
-    },
-    {
-      title: '앱으로 이동',
-      link: {
-        mobileWebUrl: 'https://developers.kakao.com',
-      },
-    },
-  ]
-});
-  </script>
-  
-</body>
-</html>
+<div
+  class="addthis_inline_share_toolbox_lp9a"
+  data-url="http://127.0.0.1:5500/index.html"
+  data-title="Forest Snap"
+  style="clear: both"
+>
+  <div
+    id="atstbx"
+    class="at-resp-share-element at-style-responsive at-mobile addthis-smartlayers addthis-animated at4-show"
+    aria-labelledby="at-9bb95f5a-3762-41a0-ba4e-84fd016ac818"
+    role="region"
+  >
+    <span
+      id="at-9bb95f5a-3762-41a0-ba4e-84fd016ac818"
+      class="at4-visually-hidden"
+      >AddThis Sharing Buttons</span
+    >
+    <div class="at-share-btn-elements">
+      <a id="kakao-link-btn" href="javascript:sendLink()">
+        <img
+          src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
+        /> </a
+      ><a
+        role="button"
+        tabindex="0"
+        class="at-icon-wrapper at-share-btn at-svc-facebook"
+        style="background-color: rgb(59, 89, 152); border-radius: 6px"
+        ><span class="at4-visually-hidden">Share to Facebook</span
+        ><span
+          class="at-icon-wrapper"
+          style="line-height: 32px; height: 32px; width: 32px"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 32 32"
+            version="1.1"
+            role="img"
+            aria-labelledby="at-svg-facebook-1"
+            class="at-icon at-icon-facebook"
+            style="fill: rgb(255, 255, 255); width: 32px; height: 32px"
+          >
+            <title id="at-svg-facebook-1">Facebook</title>
+            <g>
+              <path
+                d="M22 5.16c-.406-.054-1.806-.16-3.43-.16-3.4 0-5.733 1.825-5.733 5.17v2.882H9v3.913h3.837V27h4.604V16.965h3.823l.587-3.913h-4.41v-2.5c0-1.123.347-1.903 2.198-1.903H22V5.16z"
+                fill-rule="evenodd"
+              ></path>
+            </g></svg></span></a
+      ><a
+        role="button"
+        tabindex="0"
+        class="at-icon-wrapper at-share-btn at-svc-twitter"
+        style="background-color: rgb(29, 161, 242); border-radius: 6px"
+        ><span class="at4-visually-hidden">Share to Twitter</span
+        ><span
+          class="at-icon-wrapper"
+          style="line-height: 32px; height: 32px; width: 32px"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 32 32"
+            version="1.1"
+            role="img"
+            aria-labelledby="at-svg-twitter-2"
+            class="at-icon at-icon-twitter"
+            style="fill: rgb(255, 255, 255); width: 32px; height: 32px"
+          >
+            <title id="at-svg-twitter-2">Twitter</title>
+            <g>
+              <path
+                d="M27.996 10.116c-.81.36-1.68.602-2.592.71a4.526 4.526 0 0 0 1.984-2.496 9.037 9.037 0 0 1-2.866 1.095 4.513 4.513 0 0 0-7.69 4.116 12.81 12.81 0 0 1-9.3-4.715 4.49 4.49 0 0 0-.612 2.27 4.51 4.51 0 0 0 2.008 3.755 4.495 4.495 0 0 1-2.044-.564v.057a4.515 4.515 0 0 0 3.62 4.425 4.52 4.52 0 0 1-2.04.077 4.517 4.517 0 0 0 4.217 3.134 9.055 9.055 0 0 1-5.604 1.93A9.18 9.18 0 0 1 6 23.85a12.773 12.773 0 0 0 6.918 2.027c8.3 0 12.84-6.876 12.84-12.84 0-.195-.005-.39-.014-.583a9.172 9.172 0 0 0 2.252-2.336"
+                fill-rule="evenodd"
+              ></path>
+            </g></svg></span></a
+      ><a
+        role="button"
+        tabindex="0"
+        class="at-icon-wrapper at-share-btn at-svc-gmail"
+        style="background-color: rgb(219, 68, 55); border-radius: 6px"
+        ><span class="at4-visually-hidden">Share to Gmail</span
+        ><span
+          class="at-icon-wrapper"
+          style="line-height: 32px; height: 32px; width: 32px"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 32 32"
+            version="1.1"
+            role="img"
+            aria-labelledby="at-svg-gmail-3"
+            class="at-icon at-icon-gmail"
+            style="fill: rgb(255, 255, 255); width: 32px; height: 32px"
+          >
+            <title id="at-svg-gmail-3">Gmail</title>
+            <g>
+              <g fill-rule="evenodd"></g>
+              <path opacity=".3" d="M7.03 8h17.94v17H7.03z"></path>
+              <path
+                d="M7.225 8h-.41C5.815 8 5 8.84 5 9.876v13.248C5 24.16 5.812 25 6.815 25h.962V12.714L16 19.26l8.223-6.546V25h.962C26.188 25 27 24.16 27 23.124V9.876C27 8.84 26.186 8 25.185 8h-.41L16 15.506 7.225 8z"
+              ></path>
+            </g></svg></span></a
+      ><a
+        role="button"
+        tabindex="0"
+        class="at-icon-wrapper at-share-btn at-svc-lineme"
+        style="background-color: rgb(0, 185, 0); border-radius: 6px"
+        ><span class="at4-visually-hidden">Share to LINE</span
+        ><span
+          class="at-icon-wrapper"
+          style="line-height: 32px; height: 32px; width: 32px"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 32 32"
+            version="1.1"
+            role="img"
+            aria-labelledby="at-svg-lineme-4"
+            class="at-icon at-icon-lineme"
+            style="fill: rgb(255, 255, 255); width: 32px; height: 32px"
+          >
+            <title id="at-svg-lineme-4">LINE</title>
+            <g>
+              <path
+                d="M27 14.927c0 1.97-.764 3.744-2.358 5.492-2.307 2.655-7.468 5.89-8.642 6.385-1.174.495-1-.315-.953-.593l.157-.94c.037-.282.075-.718-.035-.996-.125-.306-.612-.465-.97-.542-5.287-.7-9.2-4.395-9.2-8.807C5 10.005 9.935 6 16 6c6.066 0 11 4.005 11 8.927zm-13.235-2.38h-.772a.214.214 0 0 0-.214.215v4.793c0 .118.095.214.213.214h.772a.214.214 0 0 0 .214-.215v-4.793a.214.214 0 0 0-.215-.214zm5.31 0h-.77a.214.214 0 0 0-.215.215v2.848l-2.197-2.967a.235.235 0 0 0-.017-.023l-.014-.013-.003-.004c-.005-.003-.01-.006-.013-.01-.002 0-.003-.002-.005-.004l-.01-.008a.262.262 0 0 0-.018-.01c-.004 0-.006-.003-.008-.004a.605.605 0 0 0-.013-.005l-.007-.002a.106.106 0 0 0-.02-.005.098.098 0 0 0-.012-.003h-.01c-.003-.002-.006-.002-.01-.003-.004 0-.007 0-.01-.002h-.78a.214.214 0 0 0-.214.214v4.793c0 .118.095.214.214.214h.77a.214.214 0 0 0 .216-.215v-2.847l2.2 2.97c.014.022.033.04.053.053 0 .002.002.002.002.003l.014.008c0 .002.003.003.005.004l.01.005c.003 0 .007.002.01.004.003 0 .004 0 .007.002l.014.005s.002 0 .003.002a.206.206 0 0 0 .054.007h.772a.214.214 0 0 0 .214-.215v-4.793a.214.214 0 0 0-.214-.214zm-7.17 4.022H9.81V12.76a.214.214 0 0 0-.216-.214h-.77a.214.214 0 0 0-.216.214v4.793c0 .058.023.11.06.148l.003.003c.002 0 .003.002.005.003.038.036.09.06.147.06h3.083a.214.214 0 0 0 .214-.215v-.772a.214.214 0 0 0-.215-.214zm11.432-2.822a.214.214 0 0 0 .214-.214v-.77a.214.214 0 0 0-.213-.216h-3.082a.213.213 0 0 0-.15.06s0 .002-.002.003c0 .002-.003.003-.004.005a.214.214 0 0 0-.06.147v4.793c0 .057.023.11.06.148l.003.003.003.003c.04.036.09.06.148.06h3.083a.214.214 0 0 0 .214-.215v-.772a.214.214 0 0 0-.213-.214H21.24v-.812h2.097a.214.214 0 0 0 .214-.214v-.77a.214.214 0 0 0-.213-.216H21.24v-.81h2.097z"
+                fill-rule="evenodd"
+              ></path>
+            </g></svg></span
+      ></a>
+    </div>
+  </div>
+</div>

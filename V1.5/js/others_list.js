@@ -100,40 +100,40 @@ function DisplayPic(category, name, value) {
   };
 }
 // SDK를 초기화 합니다. 사용할 앱의 JavaScript 키를 설정해 주세요.
-Kakao.init("0b24d43fac19bb4524f58083eb6b5439");
+// Kakao.init("0b24d43fac19bb4524f58083eb6b5439");
 
-// SDK 초기화 여부를 판단합니다.
-console.log(Kakao.isInitialized());
-Kakao.Link.createDefaultButton({
-  container: "#kakao-link-btn",
-  objectType: "feed",
-  content: {
-    title: "디저트 사진",
-    description: "아메리카노, 빵, 케익",
-    imageUrl:
-      "https://htomato.netlify.app/img/"+category+".png",
-    link: {
-      mobileWebUrl: "https://developers.kakao.com",
-      androidExecParams: "test",
-    },
-  },
-  social: {
-    likeCount: 10,
-    commentCount: 20,
-    sharedCount: 30,
-  },
-  buttons: [
-    {
-      title: "웹으로 이동",
-      link: {
-        mobileWebUrl: location.href,
-      },
-    },
-    {
-      title: "앱으로 이동",
-      link: {
-        mobileWebUrl: location.href,
-      },
-    },
-  ],
-});
+// // SDK 초기화 여부를 판단합니다.
+// console.log(Kakao.isInitialized());
+// Kakao.Link.createDefaultButton({
+//   container: "#kakao-link-btn",
+//   objectType: "feed",
+//   content: {
+//     title: "디저트 사진",
+//     description: "아메리카노, 빵, 케익",
+//     imageUrl:
+//       "https://htomato.netlify.app/img/"+category+".png",
+//     link: {
+//       mobileWebUrl: "https://developers.kakao.com",
+//       androidExecParams: "test",
+//     },
+//   },
+//   social: {
+//     likeCount: 10,
+//     commentCount: 20,
+//     sharedCount: 30,
+//   },
+//   buttons: [
+//     {
+//       title: "웹으로 이동",
+//       link: {
+//         mobileWebUrl: location.href,
+//       },
+//     },
+//     {
+//       title: "앱으로 이동",
+//       link: {
+//         mobileWebUrl: location.href,
+//       },
+//     },
+//   ],
+// });

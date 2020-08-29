@@ -33,3 +33,11 @@ section, #disqus_thread,.addthis_inline_share_toolbox_lp9a{
     border-radius: 4px; 
     transition: all 500ms;
   }
+  #kakao-link-btn > img{
+    width: 42px;
+    height: 42px;
+    position: relative;
+    left: -105px;
+    margin-right: 20px;
+    top:42px;
+  }
