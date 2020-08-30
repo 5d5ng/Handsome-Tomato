@@ -12,12 +12,15 @@ section, #disqus_thread,.addthis_inline_share_toolbox_lp9a{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); */
-    text-align: center;
-    padding: 1em .75em;
     /* max-width: 600px; */
     /* border: 1px solid #e8e8e8;
     /* border-radius: 6px; */
     background: #fff; 
+  }
+  body{
+    position: relative;
+    top: 70px;
+    text-align: center;
   }
   .btn{
     position : relative;
