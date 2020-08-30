@@ -35,15 +35,11 @@ section, #disqus_thread,.addthis_inline_share_toolbox_lp9a{
   }
   #kakao-link-btn > img{
     width: 42px;
-    height: 42px;
-    position: relative;
-    left: -105px;
-    margin-right: 20px;
-    top:42px;
+    height: 42.5px;
+    margin-bottom: 5px;
     z-index: 1;
   }
   #kakao-link-btn :hover{
     transform: translateY(-4px);
-    colort:#fff;
     text-decoration: none;
   }
