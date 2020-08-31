@@ -46,7 +46,7 @@ box-sizing:border-box;
   margin-bottom: 5px;
   z-index: 1;
 }
-#kakao-link-btn > img :hover{
+#kakao-link-btn :hover{
   transform: translateY(-4px);
   text-decoration: none;
 }
