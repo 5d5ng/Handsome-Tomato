@@ -97,8 +97,8 @@ Kakao.Link.createDefaultButton({
   container: "#kakao-link-btn",
   objectType: "feed",
   content: {
-    title: "디저트 사진",
-    description: "아메리카노, 빵, 케익",
+    title: "Forest Snap",
+    description: "어떤 식물일까? 결과 확인하기",
     imageUrl:
       "https://htomato.netlify.app/img/"+category+".png",
     link: {
@@ -114,12 +114,6 @@ Kakao.Link.createDefaultButton({
   buttons: [
     {
       title: "웹으로 이동",
-      link: {
-        mobileWebUrl: location.href,
-      },
-    },
-    {
-      title: "앱으로 이동",
       link: {
         mobileWebUrl: location.href,
       },
