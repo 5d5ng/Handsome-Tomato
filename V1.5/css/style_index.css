@@ -49,8 +49,7 @@ box-sizing:border-box;
   top:46px;
   z-index: 1;
 }
-#kakao-link-btn :hover{
+#kakao-link-btn > img :hover{
   transform: translateY(-4px);
-  colort:#fff;
   text-decoration: none;
 }
