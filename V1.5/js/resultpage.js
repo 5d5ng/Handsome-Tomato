@@ -97,7 +97,7 @@ Kakao.Link.createDefaultButton({
   container: "#kakao-link-btn",
   objectType: "feed",
   content: {
-    title: "ForestSnap",
+    title: "Forest Snap",
     description: "어떤 식물일까? 결과 확인하기",
     imageUrl:
       "https://htomato.netlify.app/img/"+category+".png",
