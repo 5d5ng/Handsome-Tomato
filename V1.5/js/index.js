@@ -7,7 +7,7 @@ Kakao.Link.createDefaultButton({
     title: "ForestSnap",
     description: "궁금한 꽃, 버섯, 열매, 풀 사진을 찍어 찾아보세요",
     imageUrl:
-      "http://mud-kage.kakao.co.kr/dn/NTmhS/btqfEUdFAUf/FjKzkZsnoeE4o19klTOVI1/openlink_640x640s.jpg",
+      "../img/ForestSnap.png",
     link: {
       mobileWebUrl: "https://developers.kakao.com",
       androidExecParams: "test",
